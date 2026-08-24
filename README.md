@@ -77,6 +77,21 @@ offers a reload that clears the caches. That distinction matters: a stale
 service worker and a stale deploy look identical from the outside and need
 opposite fixes.
 
+## Updating the installed app
+
+The service worker skips waiting on install and claims its clients on
+activate, and the page reloads itself when control changes. It also checks for
+a new worker whenever the app becomes visible, because an installed PWA is
+resumed far more often than it is launched, and a resumed app never re-runs
+registration.
+
+This matters more than it sounds. With the default "prompt" registration the
+new worker installs and then parks in "waiting" until every client is gone —
+and an installed PWA keeps its client alive across app close, so on iOS that
+is effectively never. The app served an old build no matter how often it was
+reopened. Settings -> Build is the manual escape hatch: it shows running
+versus deployed and force-clears the caches.
+
 ## On a phone
 
 Built mobile-first and verified at 390 / 360 / 320 CSS pixels: no horizontal

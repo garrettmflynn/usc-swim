@@ -6,6 +6,25 @@ declare const self: ServiceWorkerGlobalScope
 cleanupOutdatedCaches()
 precacheAndRoute(self.__WB_MANIFEST)
 
+/**
+ * Take over as soon as a new version is installed.
+ *
+ * Without these two, a new worker installs and parks in "waiting" until every
+ * client is gone — and an installed PWA keeps its client alive across app
+ * close, so on iOS that is effectively never. The app kept serving an old
+ * build no matter how many times it was reopened.
+ *
+ * The page reloads itself on controllerchange (see main.tsx), so swapping the
+ * worker mid-session can't leave stale JS running against fresh assets.
+ */
+self.addEventListener('install', () => {
+  void self.skipWaiting()
+})
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(self.clients.claim())
+})
+
 self.addEventListener('message', (event) => {
   if (event.data?.type === 'SKIP_WAITING') void self.skipWaiting()
 })

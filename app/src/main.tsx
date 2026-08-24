@@ -10,8 +10,38 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 )
 
-// Update in the background; the next launch gets the new build.
-registerSW({ immediate: true })
+/**
+ * Keep the running app on the current build.
+ *
+ * The service worker claims control as soon as it activates, so the page has
+ * to reload to pick up the assets that came with it. The guard matters: two
+ * workers trading control would otherwise reload each other forever.
+ */
+let reloading = false
+navigator.serviceWorker?.addEventListener('controllerchange', () => {
+  if (reloading) return
+  reloading = true
+  location.reload()
+})
+
+const updateSW = registerSW({
+  immediate: true,
+  onNeedRefresh() {
+    // autoUpdate handles this, but if a worker ever does park in waiting,
+    // push it through rather than leaving the app on an old build.
+    void updateSW(true)
+  },
+})
+
+/**
+ * An installed PWA is resumed far more often than it is launched, and a
+ * resumed app never re-runs registration. Without this it can sit on a stale
+ * build for days.
+ */
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible') return
+  void navigator.serviceWorker?.getRegistration().then((reg) => reg?.update())
+})
 
 /**
  * Refuse pinch- and double-tap-zoom.

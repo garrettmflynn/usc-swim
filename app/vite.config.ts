@@ -44,7 +44,9 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'prompt',
+      // autoUpdate: a new build should just be there. 'prompt' left the new
+      // worker waiting for a message nothing sent.
+      registerType: 'autoUpdate',
       manifest: false, // hand-written in public/manifest.webmanifest
       injectRegister: null,
       srcDir: 'src',
