@@ -92,6 +92,13 @@ def test_windows_and_closures():
         ("12am-1am", [[0, 60]], False),         # midnight, not noon
         ("6:30am-8:15am", [[390, 495]], False),
         ("6am-8am and 4pm-6pm", [[360, 480], [960, 1080]], False),
+        # USC writes these three ways in a single week, and the & forms were
+        # silently dropped until 2026-08-24.
+        ("6am-8am & 4pm-6pm", [[360, 480], [960, 1080]], False),
+        ("6am-8am, 11am-12pm & 4pm-6pm",
+         [[360, 480], [660, 720], [960, 1080]], False),
+        ("6am-8am, 11am-12pm, & 4pm-6pm",
+         [[360, 480], [660, 720], [960, 1080]], False),
         ("6am-8am; 4pm-6pm", [[360, 480], [960, 1080]], False),
         ("Closed", [], True),
         ("N/A", [], True),
@@ -237,3 +244,52 @@ def test_stats_survive_an_empty_dataset():
     assert stats["coverage_rate"] is None
     assert stats["median_post_lag_hours"] is None
     assert stats["weeks"] == []
+
+
+# ------------------------------------------------- windows going missing
+
+def test_a_row_that_loses_windows_is_flagged():
+    """The failure that got through: a row can match ROW_RE, look parsed, and
+    still drop half its hours in the value splitter."""
+    block = (
+        "<h3>Rec Swim Hours</h3><h3>Dive Pool</h3>"
+        "<p>Tue, 8/25: 6am-8am &amp; 4pm-6pm</p>"
+    )
+    parsed = scrape.parse_block(block, date(2026, 8, 25))
+    row = parsed["pools"]["Dive Pool"][0]
+    assert row["windows"] == [[360, 480], [960, 1080]]
+    assert "windows_dropped" not in row["flags"]
+
+
+def test_dropped_windows_drive_the_health_status():
+    """A row holding more ranges than we extracted is the parser failing."""
+    parsed = {"pools": {"P": [
+        {"windows": [[360, 480]], "flags": ["windows_dropped"]},
+    ]}}
+    health = scrape.parse_health(parsed, [])
+    assert health["status"] == "degraded"
+    assert health["rows_with_dropped_windows"] == 1
+
+
+def test_a_clean_row_reports_no_dropped_windows():
+    parsed = {"pools": {"P": [{"windows": [[360, 480]], "flags": []}]}}
+    health = scrape.parse_health(parsed, [])
+    assert health["status"] == "ok"
+    assert health["rows_with_dropped_windows"] == 0
+
+
+@pytest.mark.parametrize(
+    "value,expected_ranges",
+    [
+        ("6am-8am", 1),
+        ("6am-8am & 4pm-6pm", 2),
+        ("6am-8am, 11am-12pm, & 4pm-6pm", 3),
+        ("12pm-1pm", 1),
+        ("Closed", 0),
+        ("USC hosting a WP match", 0),
+    ],
+)
+def test_range_counter_sees_what_the_text_holds(value, expected_ranges):
+    """The counter is the independent check on the splitter, so it must not
+    share the splitter's assumptions about separators."""
+    assert len(scrape.RANGE_RE.findall(value)) == expected_ranges

@@ -46,6 +46,11 @@ ROW_RE = re.compile(
     re.I,
 )
 TIME_RE = re.compile(r"(\d{1,2})(?::(\d{2}))?\s*([ap])\.?m\.?", re.I)
+# How many time ranges the raw text appears to contain, independent of how the
+# splitter happens to chunk it. Used to notice windows going missing.
+RANGE_RE = re.compile(
+    r"\d{1,2}(?::\d{2})?\s*(?:[ap]\.?m\.?)?\s*[-–—]\s*\d{1,2}(?::\d{2})?\s*[ap]\.?m\.?",
+    re.I)
 WEEKDAYS = {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
 
 # The block is headings and text, never layout containers. See extract_block.
@@ -177,7 +182,7 @@ def parse_windows(value: str) -> tuple[list[list[int]], bool]:
     if re.search(r"\b(closed|n/?a|none)\b", value, re.I):
         return [], True
     windows = []
-    for chunk in re.split(r"[,;]| and ", value):
+    for chunk in re.split(r"[,;&]|\band\b", value):
         times = TIME_RE.findall(chunk)
         if len(times) != 2:
             continue
@@ -216,6 +221,14 @@ def parse_block(block_html: str, today: date) -> dict:
         weekday, month, day, year, value = row.groups()
         d = infer_year(int(month), int(day), today, year)
         windows, closed = parse_windows(value)
+        # A row that matches ROW_RE always looks parsed, even when the value
+        # splitter quietly drops half of it — which is how "6am-8am & 4pm-6pm"
+        # became no hours at all while health still reported ok. Compare what
+        # the text plainly contains against what came out.
+        flags = []
+        expected = len(RANGE_RE.findall(value))
+        if expected > len(windows):
+            flags.append("windows_dropped")
         pools.setdefault(current, []).append(
             {
                 "weekday": weekday[:3].title(),
@@ -223,7 +236,7 @@ def parse_block(block_html: str, today: date) -> dict:
                 "raw": value.strip(),
                 "windows": windows,
                 "closed": closed,
-                "flags": [],
+                "flags": flags,
             }
         )
 
@@ -282,10 +295,13 @@ def parse_health(parsed: dict, unconsumed: list[str] | None = None) -> dict:
     unattributed = sum(
         len(r["windows"]) for k, v in pools.items()
         for r in v if k in UNNAMED_POOLS)
+    # Rows whose text held more ranges than we managed to extract. This is the
+    # parser failing on a row it appeared to handle, so it drives status.
+    dropped = [r for r in rows if "windows_dropped" in r.get("flags", [])]
 
     if not rows:
         status = "failed"
-    elif unconsumed or unattributed:
+    elif unconsumed or unattributed or dropped:
         status = "degraded"
     else:
         status = "ok"
@@ -296,6 +312,7 @@ def parse_health(parsed: dict, unconsumed: list[str] | None = None) -> dict:
         "rows": len(rows),
         "windows": windows,
         "anomaly_rows": len(anomalies),
+        "rows_with_dropped_windows": len(dropped),
         "unattributed_windows": unattributed,
         "unconsumed": unconsumed[:12],
         "unconsumed_total": len(unconsumed),
