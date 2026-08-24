@@ -62,8 +62,17 @@ VERSION = "1.0.0"
 # the next h2", which on this page runs past into basketball and tennis.
 ACCORDION = "fl-accordion-item"
 
-WEEK_RE = re.compile(r"week\s+of\s+(\d{1,2}/\d{1,2}(?:/\d{2,4})?)\s*[-–—]\s*"
-                     r"(\d{1,2}/\d{1,2}(?:/\d{2,4})?)", re.I)
+DATE_RANGE = r"(\d{1,2}/\d{1,2}(?:/\d{2,4})?)\s*[-–—]\s*(\d{1,2}/\d{1,2}(?:/\d{2,4})?)"
+WEEK_RE = re.compile(r"week\s+of\s+" + DATE_RANGE, re.I)
+# Through mid-2024 the range rode in the heading and never said "week of":
+# "Rec Swim Hours (5/20/24-5/26/24)". A bare parenthesised range would be too
+# loose to match on, so it has to sit on a Rec Swim heading to count.
+HEADING_WEEK_RE = re.compile(r"rec\s+swim\s+hours[^\d]*\(?\s*" + DATE_RANGE, re.I)
+
+
+def week_header(line: str) -> re.Match[str] | None:
+    """Match either spelling of a week header, or None."""
+    return WEEK_RE.search(line) or HEADING_WEEK_RE.search(line)
 # "Monday, 3/23:", "Saturday 8/9:", "Saturday11/23:" — the date is optional and
 # so is every separator around it. All three spellings are real.
 DAY_RE = re.compile(
@@ -89,6 +98,11 @@ NOTE_RE = re.compile(
     r"(game\s*day|see\s+ped|maintenance|meet|tournament|holiday|practice|"
     r"schedule|notice|subject\s+to\s+change|first[- ]come|lap\s+swim|"
     r"please\s+note|lanes?\s+are)", re.I)
+
+# Cheap "how much schedule is in here" measure, for picking between duplicate
+# copies of the same week; see split_weeks.
+DAY_RE_COUNT = re.compile(
+    r"^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)", re.I | re.M)
 
 DAY_INDEX = {"monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3,
              "friday": 4, "saturday": 5, "sunday": 6}
@@ -229,18 +243,36 @@ def parse_legacy_block(text: str, week_start: date) -> tuple[dict[str, list[dict
 # ------------------------------------------------------------------ extraction
 
 def extract_legacy_section(html: str) -> str:
-    """Normalized text of the Rec Swim block from an archived capture."""
-    soup = BeautifulSoup(html, "html.parser")  # lxml chokes on some captures
-    start = None
-    for tag in soup.find_all(["h2", "h3", "h4"]):
-        if scrape.SECTION_START.search(tag.get_text(" ", strip=True)):
-            start = tag
-            break
-    if start is None:
-        raise LookupError("no Rec Swim Hours heading in this capture")
+    """Normalized text of the Rec Swim block from an archived capture.
 
-    scope = start.find_parent(class_=ACCORDION)
-    if scope is None:  # layout predates the accordion — fall back to the h2 rule
+    The archived page is Beaver Builder; each facility is one accordion item,
+    and that container is the section boundary — far more reliable than "walk
+    until the next h2", which on this page runs into basketball and tennis.
+
+    Mid-2024 captures split the block across *two* items: one carrying the
+    heading and the "*Updated" stamp, the next carrying the schedule under its
+    own ranged headings. Anchoring on the first matching heading found the
+    prose and none of the rows, so take every swim-bearing item in document
+    order and let split_weeks work out how many weeks are in there.
+    """
+    soup = BeautifulSoup(html, "html.parser")  # lxml chokes on some captures
+
+    items = [
+        item
+        for item in soup.find_all(class_=ACCORDION)
+        if scrape.SECTION_START.search(item.get_text(" ", strip=True))
+    ]
+    if items:
+        scope = BeautifulSoup("".join(str(i) for i in items), "html.parser")
+    else:
+        # Layout predates the accordion — fall back to the h2 rule.
+        start = None
+        for tag in soup.find_all(["h2", "h3", "h4"]):
+            if scrape.SECTION_START.search(tag.get_text(" ", strip=True)):
+                start = tag
+                break
+        if start is None:
+            raise LookupError("no Rec Swim Hours heading in this capture")
         parts = [str(start)]
         for tag in start.find_all_next():
             if tag.name in ("h1", "h2"):
@@ -250,7 +282,7 @@ def extract_legacy_section(html: str) -> str:
         scope = BeautifulSoup("\n".join(parts), "html.parser")
 
     text = unicodedata.normalize("NFKC", scope.get_text("\n"))
-    text = text.replace("’", "'").replace("–", "-").replace("—", "-")
+    text = text.replace("\u2019", "'").replace("\u2013", "-").replace("\u2014", "-")
     lines = [re.sub(r"[ \t]+", " ", ln).strip() for ln in text.splitlines()]
     # "Expand"/"Collapse" are the accordion's own controls, not content.
     drop = {"expand", "collapse"}
@@ -265,7 +297,7 @@ def split_weeks(text: str, captured: date) -> list[tuple[date, str]]:
     Both are just a line containing WEEK_RE, so both are handled here.
     """
     lines = text.splitlines()
-    marks = [(i, WEEK_RE.search(ln)) for i, ln in enumerate(lines)]
+    marks = [(i, week_header(ln)) for i, ln in enumerate(lines)]
     marks = [(i, m) for i, m in marks if m]
     if not marks:
         return []
@@ -280,7 +312,17 @@ def split_weeks(text: str, captured: date) -> list[tuple[date, str]]:
         # The page labels the week by its Monday, but trust the date, not the label.
         start -= timedelta(days=start.weekday())
         out.append((start, "\n".join(lines[i + 1:end])))
-    return out
+
+    # Unioning the accordion items can surface the same week twice: the item
+    # holding the heading repeats the week label, and its body is prose, so it
+    # parses as a week with no hours and would overwrite the real one. Keep the
+    # copy with the most content per week start.
+    best: dict[date, str] = {}
+    for start, body in out:
+        rows = len(DAY_RE_COUNT.findall(body))
+        if start not in best or rows > len(DAY_RE_COUNT.findall(best[start])):
+            best[start] = body
+    return sorted(best.items())
 
 
 def updated_label(text: str, captured: date) -> str | None:
