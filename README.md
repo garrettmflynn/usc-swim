@@ -77,6 +77,18 @@ offers a reload that clears the caches. That distinction matters: a stale
 service worker and a stale deploy look identical from the outside and need
 opposite fixes.
 
+## Working on the app
+
+`docs/` is generated and belongs to the build workflow. Because the bundle
+carries the commit it was built from, a local build stamps a different sha than
+the commit CI builds, so the two can never be byte-identical — committing local
+output guarantees a conflict on the next rebase.
+
+    bin/commit-source -m "..."   commits everything except docs/
+
+Build locally as much as you like for testing; just don't commit the output.
+Push source, and the workflow produces docs/ from it.
+
 ## Updating the installed app
 
 The service worker skips waiting on install and claims its clients on

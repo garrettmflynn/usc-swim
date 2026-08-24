@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Commit source changes without touching docs/.
+#
+# The build workflow rebuilds and commits docs/ on every push that changes
+# app/. Since the provenance work bakes the commit sha into the bundle, a local
+# build can never match the one CI produces — it stamps a different commit. So
+# committing local build output guarantees a conflict on the next rebase.
+#
+# CI owns docs/. This commits everything else and leaves docs/ at whatever is
+# already committed.
+#
+#   bin/commit-source -m "message"        or        bin/commit-source -F file
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+if [ -z "${1:-}" ]; then
+  echo "usage: bin/commit-source -m <message> | -F <file>" >&2
+  exit 2
+fi
+
+# Discard local build output so it can't be staged, then stage everything else.
+git checkout -- docs 2>/dev/null || true
+git add -A -- ':!docs'
+
+if git diff --cached --quiet; then
+  echo "nothing to commit outside docs/"
+  exit 0
+fi
+
+git commit "$@"
+echo
+echo "Committed source only. Push, and the build workflow will produce docs/."
