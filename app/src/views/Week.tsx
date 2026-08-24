@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { ChevronDown, CircleSlash, Clock3, Sparkles } from 'lucide-react'
 import type { Latest, Snapshot, Window } from '../types'
 import { DAYS, outlook, type DayOutlook } from '../lib/analysis'
-import { clock } from '../lib/format'
+import { clock, todayISO } from '../lib/format'
 
 const DAY_START = 5 * 60
 const DAY_END = 20 * 60
@@ -16,10 +16,9 @@ export default function Week({
   latest: Latest
   history: Snapshot[]
 }) {
-  const today = useMemo(
-    () => new Date(`${latest.coverage.today}T12:00:00`),
-    [latest.coverage.today],
-  )
+  // The device's date, not the check's — see todayISO.
+  const todayIso = todayISO()
+  const today = useMemo(() => new Date(`${todayIso}T12:00:00`), [todayIso])
   const days = useMemo(() => outlook(history, latest, today, 7), [history, latest, today])
   const [open, setOpen] = useState<string | null>(days[0]?.date ?? null)
 
@@ -75,7 +74,7 @@ export default function Week({
           <DayRow
             key={day.date}
             day={day}
-            isToday={day.date === latest.coverage.today}
+            isToday={day.date === todayIso}
             expanded={open === day.date}
             onToggle={() => setOpen(open === day.date ? null : day.date)}
             nowMin={nowMin}

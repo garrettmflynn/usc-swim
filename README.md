@@ -47,6 +47,21 @@ deliberately separate from whether USC's own data is wrong. A typo'd date is
 their mistake and doesn't mean the parser needs fixing; unrecognised lines do.
 A check that yields no rows at all exits non-zero and fails the workflow.
 
+## On a phone
+
+Built mobile-first and verified at 390 / 360 / 320 CSS pixels: no horizontal
+overflow at any of them, tap targets at least 44px, and the heat grid scrolls
+inside its own box rather than moving the page.
+
+Pinch- and double-tap-zoom are off. iOS Safari ignores `user-scalable=no` on
+purpose, so the gestures are declined in `main.tsx` as well — a fixed-layout
+schedule should hold still while you read it. Type is sized for phones instead
+of relying on zoom, and OS-level display-size settings still apply.
+
+"Today" always comes from the device clock, never from the data. The check
+records the date it ran, so reading the week from it would shift everything by
+a day the moment midnight passed and label yesterday "Today".
+
 ## Setup
 
 1. Push the repo. Settings → Pages → Deploy from a branch, `main`, `/docs`.

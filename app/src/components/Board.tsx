@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import type { Latest, Row, Window } from '../types'
-import { clock, hourLabel, shortDate } from '../lib/format'
+import { clock, hourLabel, shortDate, todayISO } from '../lib/format'
 
 const DAY_START = 5 * 60
 const DAY_END = 20 * 60
@@ -33,7 +33,7 @@ export default function Board({ latest }: { latest: Latest }) {
   const lanes = useMemo(() => byDay(latest), [latest])
   if (!lanes.length) return null
 
-  const today = latest.coverage.today
+  const today = todayISO()
   const now = new Date()
   const nowMin = now.getHours() * 60 + now.getMinutes()
   const poolsShown = Array.from(new Set(lanes.flatMap((l) => l.blocks.map((b) => b.pool))))

@@ -10,6 +10,30 @@ export function hourLabel(hour: number): string {
   return `${hour % 12 || 12}${hour < 12 ? 'a' : 'p'}`
 }
 
+/**
+ * Today, according to the device.
+ *
+ * Deliberately not `latest.coverage.today`: that records the date the *check*
+ * ran, so once midnight passes — or the watcher is late — the data still says
+ * yesterday. Reading the week from it shifts the whole schedule by a day and
+ * labels yesterday "Today", which is exactly the mistake this app exists to
+ * stop people making.
+ */
+export function todayISO(at: Date = new Date()): string {
+  return [
+    at.getFullYear(),
+    String(at.getMonth() + 1).padStart(2, '0'),
+    String(at.getDate()).padStart(2, '0'),
+  ].join('-')
+}
+
+/** Whole days from an ISO date to today; negative means the date is past. */
+export function daysFromToday(iso: string, at: Date = new Date()): number {
+  const a = localDate(iso).getTime()
+  const b = localDate(todayISO(at)).getTime()
+  return Math.round((a - b) / 86_400_000)
+}
+
 /** Parse a bare ISO date as local noon, so time zones can't shift the day. */
 export function localDate(iso: string): Date {
   return new Date(`${iso}T12:00:00`)

@@ -834,3 +834,133 @@ button.primary:hover:not(:disabled) { filter: brightness(1.08); }
   background: color-mix(in srgb, var(--gold) 58%, transparent);
   opacity: 1;
 }
+
+/* ========================================================== mobile pass
+   Real phones: notches, home indicators, 360px-wide Androids, and iOS's
+   habit of zooming or resizing text when you least want it. */
+
+html {
+  /* iOS inflates text in landscape without this, which breaks the type scale */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  /* Pinch-zoom off. The viewport meta alone is ignored by iOS Safari, so the
+     gesture has to be refused here too. pan-x/pan-y keeps ordinary scrolling. */
+  touch-action: pan-x pan-y;
+  /* No rubber-band overscroll revealing the page behind the app */
+  overscroll-behavior: none;
+  /* A stray wide child should never let the whole page slide sideways */
+  overflow-x: hidden;
+}
+
+.app {
+  /* dvh tracks the collapsing URL bar; svh is the safe floor while it's open */
+  min-height: 100svh;
+  min-height: 100dvh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.app > main {
+  overscroll-behavior-y: contain;
+}
+
+/* Tap targets: 44px is Apple's floor and a good one on Android too. */
+.tabbar button {
+  min-height: 52px;
+  -webkit-tap-highlight-color: transparent;
+}
+.dayrow > button {
+  min-height: 48px;
+  -webkit-tap-highlight-color: transparent;
+}
+.seg button,
+.copyrow button,
+button.primary {
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS zooms the viewport when focusing anything under 16px. */
+textarea,
+input,
+select {
+  font-size: 16px;
+}
+
+/* Long unbroken strings (push endpoints, URLs) must not widen the page. */
+code,
+textarea,
+.health code,
+.log time {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Anything genuinely wide scrolls inside its own box, never the body. */
+.scroller {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  /* let the grid bleed to the panel edge so it doesn't look clipped */
+  margin-inline: -22px;
+  padding-inline: 22px;
+}
+
+/* ---------------------------------------------------------- narrow phones */
+
+@media (max-width: 430px) {
+  .view {
+    padding: 13px 13px 22px;
+    gap: 13px;
+  }
+  .panel, .board, .log { padding: 17px 16px 19px; }
+  .appbar { padding-left: 15px; padding-right: 15px; }
+
+  .hero { padding: 19px 18px 20px; }
+  .hero h1 { font-size: clamp(1.75rem, 9.5vw, 2.4rem); gap: 9px; }
+  .hero .hero-time { font-size: clamp(0.95rem, 5vw, 1.15rem); }
+
+  /* The day row is the thing people actually read on a phone: give the times
+     their own line rather than squeezing them beside the date. */
+  .dayrow > button {
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    padding: 12px 14px 9px;
+  }
+  .dayrow .dl { flex: 0 0 auto; flex-direction: row; align-items: baseline; gap: 7px; }
+  .dayrow .dtimes { flex: 1 1 100%; order: 3; gap: 3px 12px; }
+  .dayrow .chev { margin-left: auto; }
+  .dayrow .tag { order: 2; }
+
+  .tiles { grid-template-columns: 1fr 1fr; }
+  .tile dd { font-size: 1.5rem; }
+
+  /* Heat grid: shrink cells so a full week fits a 360px screen. */
+  .grid { border-spacing: 2px; }
+  .cell { width: 22px; height: 19px; }
+  .grid th { font-size: 9px; }
+
+  .best li { grid-template-columns: 74px 1fr 44px; gap: 9px; font-size: 11px; }
+  .odds { gap: 4px 12px; }
+  .log time { flex-basis: 96px; }
+  .board .lane .d { flex-basis: 88px; font-size: 10px; }
+  .ruler { margin-left: 88px; }
+}
+
+/* Very narrow (older/compact Androids) — drop the ruler rather than crush it. */
+@media (max-width: 340px) {
+  .cell { width: 19px; height: 17px; }
+  .tiles { grid-template-columns: 1fr; }
+  .board .lane .d { flex-basis: 76px; }
+  .ruler { margin-left: 76px; }
+}
+
+/* Short screens in landscape: the sticky bars shouldn't eat the content. */
+@media (max-height: 460px) and (orientation: landscape) {
+  .appbar { position: static; }
+  .hero { padding: 15px 18px 16px; }
+  .hero h1 { font-size: 1.6rem; }
+}
