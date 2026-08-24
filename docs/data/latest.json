@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-08-23T20:30:45.104030-07:00",
+  "checked_at": "2026-08-23T20:33:19.683574-07:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
   "content_hash": "fde1eebbacaaf2fd",
-  "conditional_304": false,
+  "conditional_304": true,
   "parsed": {
     "updated_label": "2026-08-17",
     "pools": {
