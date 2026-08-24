@@ -148,6 +148,63 @@ def day_rows(latest: dict) -> list[tuple[str, list[str]]]:
     return out
 
 
+def timeline_bounds(latest: dict) -> tuple[int, int]:
+    """The hour range worth drawing, from the week's own hours.
+
+    Drawing a fixed 12am-12am would spend most of the width on hours the pool
+    has never been open. Padded by an hour so the first and last blocks aren't
+    flush against the edge.
+    """
+    starts, ends = [], []
+    for rows in latest["parsed"]["pools"].values():
+        for row in rows:
+            for w in row["windows"]:
+                starts.append(w[0])
+                ends.append(w[1])
+    if not starts:
+        return 6, 20
+    lo = max(0, min(starts) // 60 - 1)
+    hi = min(24, -(-max(ends) // 60) + 1)
+    return lo, max(hi, lo + 6)
+
+
+def timeline_row(windows: list[tuple[int, int]], lo: int, hi: int,
+                 open_colour: str, empty_colour: str) -> str:
+    """One day's hours as a strip of coloured table cells.
+
+    Table cells rather than a bar drawn with CSS or an image: mail clients
+    strip stylesheets and Gmail refuses data: URIs, but every one of them
+    fills a td background. Half-hour resolution, which is the finest the
+    posted schedule ever uses.
+    """
+    slots = (hi - lo) * 2
+    filled = [False] * slots
+    for start, end in windows:
+        for i in range(slots):
+            slot_start = lo * 60 + i * 30
+            if start < slot_start + 30 and end > slot_start:
+                filled[i] = True
+
+    cells = []
+    for i, on in enumerate(filled):
+        colour = open_colour if on else empty_colour
+        # Rounded ends on each run so blocks read as blocks, not one long bar.
+        radius = ""
+        if on:
+            first = i == 0 or not filled[i - 1]
+            last = i == slots - 1 or not filled[i + 1]
+            if first and last:
+                radius = "border-radius:3px;"
+            elif first:
+                radius = "border-radius:3px 0 0 3px;"
+            elif last:
+                radius = "border-radius:0 3px 3px 0;"
+        cells.append(
+            f'<td bgcolor="{colour}" height="10" style="background:{colour};'
+            f'{radius}font-size:0;line-height:0;">&nbsp;</td>')
+    return "".join(cells)
+
+
 def headline(latest: dict, changes: list[str], warning: str | None) -> str:
     """One sentence someone can act on without opening anything."""
     through = latest["coverage"].get("posted_through") or "nothing"
@@ -254,21 +311,67 @@ def render_html(latest: dict, history: list[dict] | None = None) -> str:
             f'letter-spacing:.12em;text-transform:uppercase;color:{muted};'
             f'padding-bottom:6px;">What changed</div>{rows}</td></tr>')
 
-    day_html = []
+    # --- the week, drawn ---------------------------------------------------
+    lo, hi = timeline_bounds(latest)
+    open_colour, empty_colour = accent, "#e4eae9"
+
+    windows_by_date: dict[str, list[tuple[int, int]]] = {}
+    for rows in latest["parsed"]["pools"].values():
+        for row in rows:
+            if not row.get("date") or "outside_posted_week" in row.get("flags", []):
+                continue
+            windows_by_date.setdefault(row["date"], []).extend(
+                (w[0], w[1]) for w in row["windows"])
+
+    # The tick row has to span exactly as many columns as the bar row, or every
+    # label sits left of the hour it names. Three-hour groups, with the last
+    # cell absorbing whatever does not divide evenly.
+    slots = (hi - lo) * 2
+    group = 6  # half-hour cells per three-hour tick
+    tick_parts = []
+    covered = 0
+    while covered < slots:
+        span = min(group, slots - covered)
+        hour = lo + covered // 2
+        tick_parts.append(
+            f'<td colspan="{span}" style="font:400 9px/1 ui-monospace,Menlo,monospace;'
+            f'color:{muted};text-align:left;padding-bottom:3px;">'
+            f'{hour % 12 or 12}{"a" if hour < 12 else "p"}</td>')
+        covered += span
+    tick_cells = "".join(tick_parts)
+
+    day_html = [
+        f'<tr><td style="width:86px;"></td><td>'
+        f'<table role="presentation" cellpadding="0" cellspacing="0" border="0" '
+        f'width="100%"><tr>{tick_cells}</tr></table></td></tr>'
+    ]
     for iso, labels in day_rows(latest):
         day = date.fromisoformat(iso).strftime("%a %-d %b")
-        value = (
-            " &middot; ".join(esc(l) for l in labels)
-            if labels
-            else f'<span style="color:{muted};">closed</span>'
+        bar = timeline_row(
+            sorted(windows_by_date.get(iso, [])), lo, hi, open_colour, empty_colour)
+        times = (
+            " &middot; ".join(esc(l.split(" ", 1)[0]) for l in labels)
+            if labels else f'<span style="color:{muted};">closed</span>'
+        )
+        pools_line = (
+            " &middot; ".join(
+                dict.fromkeys(esc(l.split(" ", 1)[1]) for l in labels if " " in l))
+            if labels else ""
         )
         day_html.append(
-            f'<tr><td style="padding:7px 0;border-top:1px solid {rule};'
-            f'font:600 13px/1.4 -apple-system,sans-serif;color:{ink};'
-            f'white-space:nowrap;vertical-align:top;width:96px;">{day}</td>'
-            f'<td style="padding:7px 0 7px 10px;border-top:1px solid {rule};'
-            f'font:400 13px/1.5 ui-monospace,Menlo,monospace;color:{ink};">'
-            f'{value}</td></tr>')
+            f'<tr>'
+            f'<td style="padding:9px 10px 0 0;vertical-align:top;white-space:nowrap;'
+            f'font:600 13px/1.2 -apple-system,Segoe UI,Roboto,sans-serif;color:{ink};'
+            f'width:86px;">{day}</td>'
+            f'<td style="padding:9px 0 0;vertical-align:top;">'
+            f'<table role="presentation" cellpadding="0" cellspacing="0" border="0" '
+            f'width="100%"><tr>{bar}</tr></table>'
+            f'<div style="font:400 12px/1.5 ui-monospace,Menlo,monospace;'
+            f'color:{ink};padding-top:5px;">{times}</div>'
+            + (f'<div style="font:400 10px/1.4 -apple-system,sans-serif;'
+               f'color:{muted};padding-top:1px;">{pools_line}</div>'
+               if pools_line else "")
+            + f'</td></tr>')
 
     parts.append(
         f'<tr><td style="padding:18px 24px 4px;">'
@@ -276,7 +379,8 @@ def render_html(latest: dict, history: list[dict] | None = None) -> str:
         f'letter-spacing:.12em;text-transform:uppercase;color:{muted};'
         f'padding-bottom:2px;">The week as posted</div>'
         f'<table role="presentation" cellpadding="0" cellspacing="0" border="0" '
-        f'width="100%">{"".join(day_html)}</table></td></tr>')
+        f'width="100%" style="table-layout:fixed;">{"".join(day_html)}</table>'
+        f'</td></tr>')
 
     health = latest.get("parse_health", {})
     if health.get("status") not in (None, "ok"):
