@@ -1095,3 +1095,18 @@ html, body {
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
 }
+
+/* ------------------------------------------------ bar sits tight to the edge
+   Without viewport-fit=cover iOS insets the web view itself, so the safe-area
+   value is 0 and the bar reaches the bottom of the visible area on its own.
+   The max() keeps a small breathing floor, and still honours a real inset if
+   a platform reports one. */
+
+.tabbar {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 4px);
+}
+
+.tabbar button {
+  padding: 8px 4px 6px;
+  min-height: 44px;
+}

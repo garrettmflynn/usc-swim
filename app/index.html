@@ -2,12 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- viewport-fit=cover so the layout reaches under the notch and home
-         indicator; the safe-area insets in the CSS put padding back where it
-         is actually needed. maximum-scale/user-scalable suppress pinch zoom,
-         which iOS Safari honours only partially — the touch-action and
-         gesture handlers in styles.css and main.tsx finish the job. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <!-- Deliberately NOT viewport-fit=cover.
+         With it, the page renders edge to edge and the tab bar has to add the
+         home-indicator inset back, which puts the labels a full indicator's
+         height above the screen edge. Without it iOS insets the web view
+         itself, env(safe-area-inset-bottom) is 0, and the bar sits tight to
+         the bottom — which is how the Transitions app (a Capacitor webview,
+         inset by its native container) looks, and what it should look like.
+         maximum-scale/user-scalable suppress pinch zoom; iOS Safari honours
+         those only partially, so styles.css and main.tsx finish the job. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>USC Swim</title>
     <meta name="description" content="Rec swim hours at the Uytengsu Aquatics Center, and what to expect when next week isn't posted yet." />
     <meta name="theme-color" content="#0f5f6b" media="(prefers-color-scheme: light)" />
