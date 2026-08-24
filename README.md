@@ -73,8 +73,28 @@ would need another parser. Common Crawl was checked and adds nothing new.
 
 Both channels are optional and skipped quietly when unconfigured.
 
-**Email** works for everyone with no per-device setup. Set `NOTIFY_EMAIL_TO`
-and `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASS` as repository secrets.
+**Email** works for everyone with no per-device setup, and sends through Gmail:
+
+1. Turn on 2-Step Verification on the sending Google account (required before
+   App Passwords exist at all): <https://myaccount.google.com/security>
+2. Create an App Password named "USC Swim":
+   <https://myaccount.google.com/apppasswords> — a 16-character string.
+3. Store it, along with the account it belongs to:
+
+       gh secret set SMTP_USER --body "you@gmail.com"
+       gh secret set SMTP_PASS   # paste the App Password when prompted
+
+`NOTIFY_EMAIL_TO` (comma-separated), `SMTP_HOST`, `SMTP_PORT` and `SMTP_FROM`
+are the remaining secrets. Gmail allows ~500 messages a day; this sends about
+one a week.
+
+Use an App Password, never the account password — Google rejects the latter for
+SMTP, and an App Password can be revoked on its own without touching the
+account.
+
+To check it works without waiting for USC: **Actions → watch → Run workflow**,
+tick *Send a test notification*. That sends regardless of change and leaves the
+change marker alone, so it won't suppress the next real one.
 
 **Web push** is nicer but has to be enrolled once per device, because the site
 is static and there is no server to register subscriptions:

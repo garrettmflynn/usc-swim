@@ -14,7 +14,12 @@ on:
     - cron: "37 1,7,13,19 * * 2-6"
     # :37 rather than :00 on purpose. GitHub queues scheduled jobs and the top
     # of the hour is the most contended slot, where runs get delayed or dropped.
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_notification:
+        description: "Send a test notification even if nothing changed"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -69,7 +74,7 @@ jobs:
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
           PUSH_SUBSCRIPTIONS: ${{ secrets.PUSH_SUBSCRIPTIONS }}
-        run: python notify.py
+        run: python notify.py ${{ inputs.test_notification && '--test' || '' }}
 
       - name: Commit if the schedule moved
         run: |

@@ -25,6 +25,7 @@ Configuration, all via environment (GitHub Actions secrets):
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import smtplib
@@ -161,6 +162,12 @@ def send_push(subject: str, body: str) -> str:
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser(description="Announce a schedule change.")
+    ap.add_argument("--test", action="store_true",
+                    help="send now regardless of whether anything changed, and "
+                         "leave the change marker untouched")
+    args = ap.parse_args()
+
     latest_path = DATA / "latest.json"
     if not latest_path.exists():
         print("no latest.json — nothing to notify about")
@@ -174,6 +181,13 @@ def main() -> int:
             previous = json.loads(STATE.read_text()).get("content_hash")
         except json.JSONDecodeError:
             previous = None
+
+    if args.test:
+        subject, body = summarize(latest)
+        print("test mode — sending regardless of change, marker left alone")
+        print(send_email(f"[test] {subject}", body))
+        print(send_push(f"[test] {subject}", body))
+        return 0
 
     if previous == digest:
         print(f"no change since {previous} — not notifying")
