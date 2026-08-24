@@ -1,13 +1,13 @@
 {
   "app": {
-    "sha": "b69aea5847daa6a35bb6f798240eeb8871bf08bd",
-    "short": "b69aea5",
+    "sha": "4e5caf5f1fed1e1751529ea9847c3806a4d6ade4",
+    "short": "4e5caf5",
     "branch": "main",
-    "builtAt": "2026-08-24T15:09:17.178Z",
+    "builtAt": "2026-08-24T15:18:28.759Z",
     "builtBy": "github-actions",
     "assets": [
-      "index-DTSvGcs2.css",
-      "index-DwyrtBKy.js",
+      "index-BMPUcHkt.css",
+      "index-D_aewO0Z.js",
       "workbox-window.prod.es5-BBnX5xw4.js"
     ]
   }
