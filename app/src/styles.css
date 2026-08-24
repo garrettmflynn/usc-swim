@@ -1014,3 +1014,19 @@ textarea,
   .deviations li { flex-wrap: wrap; gap: 3px 8px; }
   .deviations li .why { flex: 1 1 100%; padding-left: 22px; }
 }
+
+/* ------------------------------------------------- per-day provenance line */
+
+.provenance {
+  margin: 0; padding: 0 15px 11px;
+  font-family: var(--data); font-size: 10.5px; line-height: 1.5;
+  display: flex; align-items: center; gap: 6px;
+  color: var(--ink-soft);
+}
+.provenance b { font-weight: 600; }
+.provenance.posted { color: var(--pool); }
+.provenance.expected { color: var(--gold); }
+.provenance.unknown { color: var(--ink-soft); }
+
+/* the old floating tag is redundant now the day says it in words */
+.dayrow .tag { display: none; }

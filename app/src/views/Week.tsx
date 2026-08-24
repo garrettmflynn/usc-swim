@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
-import { ChevronDown, CircleSlash, Clock3, Sparkles } from 'lucide-react'
+import { BadgeCheck, ChevronDown, CircleSlash, Clock3, Sparkles } from 'lucide-react'
 import type { Latest, Snapshot, Window } from '../types'
-import { DAYS, outlook, type DayOutlook } from '../lib/analysis'
+import { DAYS, DAY_NAMES, outlook, type DayOutlook } from '../lib/analysis'
 import { clock, todayISO } from '../lib/format'
 import Deviations from '../components/Deviations'
 
@@ -64,9 +64,10 @@ export default function Week({
       {unposted > 0 && (
         <p className="banner">
           <b>
-            {unposted} of 7 days aren’t posted.
+            {7 - unposted} of the next 7 days {7 - unposted === 1 ? 'is' : 'are'}{' '}
+            posted.
           </b>{' '}
-          Those show what that weekday usually looks like.
+          The rest are projected from past weeks and marked on each day.
         </p>
       )}
 
@@ -127,9 +128,31 @@ function DayRow({
           )}
         </span>
 
-        {day.source !== 'posted' && <span className="tag expected">expected</span>}
         <ChevronDown className="chev" size={16} strokeWidth={1.8} aria-hidden="true" />
       </button>
+
+      <p className={`provenance ${day.source}`}>
+        {day.source === 'posted' ? (
+          <>
+            <BadgeCheck size={12} strokeWidth={2} aria-hidden="true" />
+            <span><b>Posted by USC</b> for this date</span>
+          </>
+        ) : day.source === 'expected' ? (
+          <>
+            <Sparkles size={12} strokeWidth={2} aria-hidden="true" />
+            <span>
+              <b>Projected</b>, not posted — from {day.known} past{' '}
+              {DAY_NAMES[day.weekday]}
+              {day.known === 1 ? '' : 's'}
+            </span>
+          </>
+        ) : (
+          <>
+            <CircleSlash size={12} strokeWidth={2} aria-hidden="true" />
+            <span><b>Unknown</b> — not posted, and no history for this weekday</span>
+          </>
+        )}
+      </p>
 
       <div className="dtrack" aria-hidden="true">
         {day.windows.map((w) => (

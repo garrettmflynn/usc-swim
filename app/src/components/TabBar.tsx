@@ -1,9 +1,9 @@
 import { Activity, CalendarDays, Settings2, Waves } from 'lucide-react'
 
-export type Tab = 'week' | 'patterns' | 'activity' | 'settings'
+export type Tab = 'schedule' | 'patterns' | 'activity' | 'settings'
 
 const TABS = [
-  { id: 'week', label: 'Week', Icon: CalendarDays },
+  { id: 'schedule', label: 'Schedule', Icon: CalendarDays },
   { id: 'patterns', label: 'Patterns', Icon: Waves },
   { id: 'activity', label: 'Activity', Icon: Activity },
   { id: 'settings', label: 'Settings', Icon: Settings2 },

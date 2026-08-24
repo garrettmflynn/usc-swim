@@ -24,10 +24,29 @@ export default function Deviations({
   const today = todayISO()
   const all = useMemo(() => deviations(history, latest), [history, latest])
   const shown = upcomingOnly ? all.filter((d) => d.date >= today) : all
+  // Whether ANY day in scope was posted at all. Without this the panel says
+  // "matches its usual shape" when the truth is that nothing is posted yet —
+  // agreement and absence are not the same claim.
+  const judged = useMemo(
+    () =>
+      Object.values(latest.parsed.pools)
+        .flat()
+        .some(
+          (r) =>
+            r.date &&
+            !r.flags.includes('outside_posted_week') &&
+            (r.windows.length > 0 || r.closed === true) &&
+            (!upcomingOnly || r.date >= today),
+        ),
+    [latest, upcomingOnly, today],
+  )
   const edits = useMemo(() => midWeekEdits(history), [history])
   const recentEdit = edits[0]
 
-  if (!shown.length && !recentEdit) return null
+  // Nothing posted in scope and no edit to report: there is nothing to say,
+  // and saying "matches its usual shape" would be a claim about data we do
+  // not have.
+  if (!shown.length && !judged && !recentEdit) return null
 
   const byDate = new Map<string, Deviation[]>()
   for (const d of shown) byDate.set(d.date, [...(byDate.get(d.date) ?? []), d])
@@ -53,9 +72,14 @@ export default function Deviations({
           )}{' '}
           Compared against every other week on record, that week excluded.
         </p>
+      ) : judged ? (
+        <p className="lede">
+          The posted days match what those weekdays usually look like.
+        </p>
       ) : (
         <p className="lede">
-          The posted week matches its usual shape.
+          Nothing is posted for the days ahead yet, so there is nothing to
+          compare. This fills in once USC puts the week up.
         </p>
       )}
 

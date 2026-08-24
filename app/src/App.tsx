@@ -11,7 +11,7 @@ import { stamp } from './lib/format'
 export default function App() {
   const [data, setData] = useState<Dataset | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [tab, setTab] = useState<Tab>('week')
+  const [tab, setTab] = useState<Tab>('schedule')
   const [prefs, setPrefs] = useState<Prefs>(() => loadPrefs())
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function App() {
 
   return (
     <Shell tab={tab} onTab={setTab} status={stamp(latest.checked_at)} changed={changed}>
-      {tab === 'week' && <Week latest={latest} history={history} />}
+      {tab === 'schedule' && <Week latest={latest} history={history} />}
       {tab === 'patterns' && <Patterns history={history} />}
       {tab === 'activity' && <Activity latest={latest} history={history} stats={stats} />}
       {tab === 'settings' && <Settings prefs={prefs} onPrefs={setPrefs} latest={latest} />}

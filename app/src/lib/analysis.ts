@@ -2,6 +2,10 @@ import type { Row, Snapshot, Window } from '../types'
 import { localDate } from './format'
 
 export const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const
+/** Spelled out, for prose where an abbreviation would have to be pluralised. */
+export const DAY_NAMES = [
+  'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
+] as const
 /** The pool has never been open outside this range in any observed week. */
 export const FIRST_HOUR = 5
 export const LAST_HOUR = 22
