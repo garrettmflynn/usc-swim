@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.cache.json
+.notified.json
+.venv/
+.DS_Store
+.wayback-cache/
+app/node_modules/
+app/dist/
+app/tsconfig.tsbuildinfo

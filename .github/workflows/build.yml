@@ -1,0 +1,52 @@
+name: build
+
+# The dashboard reads docs/data/*.json at runtime, so the hourly watcher never
+# needs to rebuild it — only a change to the app itself does.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - run: npm ci
+        working-directory: app
+
+      - run: npm run build
+        working-directory: app
+        env:
+          # Public half of the VAPID pair — safe to ship in the bundle; the
+          # private half only ever lives in the notifier's secret.
+          VITE_VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
+
+      - name: Commit the built dashboard
+        run: |
+          git config user.name  "swimwatch"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs
+          if git diff --cached --quiet; then
+            echo "no change"
+          else
+            git commit -m "build dashboard"
+            git push
+          fi

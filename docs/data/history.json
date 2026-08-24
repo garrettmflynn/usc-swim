@@ -1,0 +1,3053 @@
+[
+  {
+    "checked_at": "2024-10-12T15:36:18-07:00",
+    "content_hash": "35567a27b83afd99",
+    "parsed": {
+      "updated_label": "2024-10-09",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2024-10-07",
+            "raw": "6:00am-8:00am, 11:00am-12:00pm, 4:00pm-6:00pm @ Dive Pool 12:00pm-2:00pm @ Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2024-10-08",
+            "raw": "6:00am-8:00am, 11:00am-12:00pm, 4:00pm-6:00pm @ Dive Pool 12:00pm-2:00pm @ Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2024-10-09",
+            "raw": "6:00am-8:00am, 11:00am-12:00pm, 4:00pm-6:00pm @ Dive Pool 12:00pm-2:00pm @ Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2024-10-10",
+            "raw": "6:00am-8:00am, 11:00am-1:00pm, 4:00pm-6:00pm @ Dive Pool 1:00pm-2:00pm @ Comp Pool",
+            "windows": [
+              [
+                780,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2024-10-11",
+            "raw": "6:00am-7:00am ; NO afternoon/evening Rec Swim, see PED schedule.",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Sat",
+            "date": "2024-10-12",
+            "raw": "NO Saturday Rec Swim.",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2024-10-13",
+            "raw": "11:00am-2:00pm",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2024-10-07",
+            "raw": "6:00am-8:00am, 11:00am-12:00pm, 4:00pm-6:00pm @ Dive Pool 12:00pm-2:00pm @ Comp Pool",
+            "windows": [
+              [
+                360,
+                480
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2024-10-08",
+            "raw": "6:00am-8:00am, 11:00am-12:00pm, 4:00pm-6:00pm @ Dive Pool 12:00pm-2:00pm @ Comp Pool",
+            "windows": [
+              [
+                360,
+                480
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2024-10-09",
+            "raw": "6:00am-8:00am, 11:00am-12:00pm, 4:00pm-6:00pm @ Dive Pool 12:00pm-2:00pm @ Comp Pool",
+            "windows": [
+              [
+                360,
+                480
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2024-10-10",
+            "raw": "6:00am-8:00am, 11:00am-1:00pm, 4:00pm-6:00pm @ Dive Pool 1:00pm-2:00pm @ Comp Pool",
+            "windows": [
+              [
+                360,
+                480
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2024-10-11",
+            "raw": "6:00am-7:00am ; NO afternoon/evening Rec Swim, see PED schedule.",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Sat",
+            "date": "2024-10-12",
+            "raw": "NO Saturday Rec Swim.",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2024-10-13",
+            "raw": "11:00am-2:00pm",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ],
+        "Unattributed": [
+          {
+            "weekday": "Mon",
+            "date": "2024-10-07",
+            "raw": "6:00am-8:00am, 11:00am-12:00pm, 4:00pm-6:00pm @ Dive Pool 12:00pm-2:00pm @ Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Tue",
+            "date": "2024-10-08",
+            "raw": "6:00am-8:00am, 11:00am-12:00pm, 4:00pm-6:00pm @ Dive Pool 12:00pm-2:00pm @ Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Wed",
+            "date": "2024-10-09",
+            "raw": "6:00am-8:00am, 11:00am-12:00pm, 4:00pm-6:00pm @ Dive Pool 12:00pm-2:00pm @ Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Thu",
+            "date": "2024-10-10",
+            "raw": "6:00am-8:00am, 11:00am-1:00pm, 4:00pm-6:00pm @ Dive Pool 1:00pm-2:00pm @ Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Fri",
+            "date": "2024-10-11",
+            "raw": "6:00am-7:00am ; NO afternoon/evening Rec Swim, see PED schedule.",
+            "windows": [
+              [
+                360,
+                420
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2024-10-12",
+            "raw": "NO Saturday Rec Swim.",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2024-10-13",
+            "raw": "11:00am-2:00pm",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2024-10-12",
+      "today_covered": true,
+      "posted_through": "2024-10-13",
+      "days_past_end": 0,
+      "swimmable_today": 0
+    },
+    "parse_health": {
+      "status": "degraded",
+      "pools": 3,
+      "rows": 21,
+      "windows": 10,
+      "anomaly_rows": 0,
+      "unattributed_windows": 2,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2024-10-12T15:36:18-07:00",
+    "source": "https://web.archive.org/web/20241012153618id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2024-11-19T07:18:50-08:00",
+    "content_hash": "1d79d1900faf3c77",
+    "parsed": {
+      "updated_label": "2024-11-15",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Fri",
+            "date": "2024-11-15",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2024-11-16",
+            "raw": "*Home Football Game Day 11am-12pm Dive Pool 12pm- 1:30 pm Comp Pool",
+            "windows": [
+              [
+                720,
+                810
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2024-11-17",
+            "raw": "11am-2pm @ Comp Pool",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Fri",
+            "date": "2024-11-15",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2024-11-16",
+            "raw": "*Home Football Game Day 11am-12pm Dive Pool 12pm- 1:30 pm Comp Pool",
+            "windows": [
+              [
+                660,
+                720
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2024-11-17",
+            "raw": "11am-2pm @ Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2024-11-19",
+      "today_covered": false,
+      "posted_through": "2024-11-17",
+      "days_past_end": 2,
+      "swimmable_today": null
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 6,
+      "windows": 7,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2024-11-19T07:18:50-08:00",
+    "source": "https://web.archive.org/web/20241119071850id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2024-11-19T07:18:50-08:00",
+    "content_hash": "4328ea1722d6182a",
+    "parsed": {
+      "updated_label": "2024-11-15",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2024-11-18",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2024-11-19",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2024-11-20",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2024-11-21",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2024-11-22",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2024-11-23",
+            "raw": "11am-2pm @ Comp Pool",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2024-11-24",
+            "raw": "11am-2pm @ Comp Pool",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2024-11-18",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2024-11-19",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2024-11-20",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2024-11-21",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2024-11-22",
+            "raw": "6-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Competition Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2024-11-23",
+            "raw": "11am-2pm @ Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Sun",
+            "date": "2024-11-24",
+            "raw": "11am-2pm @ Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2024-11-19",
+      "today_covered": true,
+      "posted_through": "2024-11-24",
+      "days_past_end": 0,
+      "swimmable_today": 4
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 22,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2024-11-19T07:18:50-08:00",
+    "source": "https://web.archive.org/web/20241119071850id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2025-01-14T22:57:19-08:00",
+    "content_hash": "a223550a37b6e3df",
+    "parsed": {
+      "updated_label": "2025-01-12",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2025-01-13",
+            "raw": "12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2025-01-14",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2025-01-15",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2025-01-16",
+            "raw": "11am-12pm Dive Pool 12pm-1pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                780
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2025-01-17",
+            "raw": "12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2025-01-18",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2025-01-19",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2025-01-13",
+            "raw": "12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2025-01-14",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2025-01-15",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2025-01-16",
+            "raw": "11am-12pm Dive Pool 12pm-1pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2025-01-17",
+            "raw": "12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2025-01-18",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                720
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2025-01-19",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2025-01-14",
+      "today_covered": true,
+      "posted_through": "2025-01-19",
+      "days_past_end": 0,
+      "swimmable_today": 3
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 16,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2025-01-14T22:57:19-08:00",
+    "source": "https://web.archive.org/web/20250114225719id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2025-04-21T08:11:36-07:00",
+    "content_hash": "df1f9b9c46118388",
+    "parsed": {
+      "updated_label": "2025-04-20",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2025-04-21",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2025-04-22",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2025-04-23",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2025-04-24",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2025-04-25",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2025-04-26",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2025-04-27",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2025-04-21",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2025-04-22",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2025-04-23",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2025-04-24",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2025-04-25",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2025-04-26",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                720
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2025-04-27",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2025-04-21",
+      "today_covered": true,
+      "posted_through": "2025-04-27",
+      "days_past_end": 0,
+      "swimmable_today": 4
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 23,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2025-04-21T08:11:36-07:00",
+    "source": "https://web.archive.org/web/20250421081136id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2025-08-07T12:57:54-07:00",
+    "content_hash": "13820a3ceb708ffa",
+    "parsed": {
+      "updated_label": "2025-08-03",
+      "pools": {
+        "Uytengsu": [
+          {
+            "weekday": "Mon",
+            "date": "2025-08-04",
+            "raw": "CLOSED",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2025-08-05",
+            "raw": "CLOSED",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2025-08-06",
+            "raw": "CLOSED",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2025-08-07",
+            "raw": "CLOSED",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2025-08-08",
+            "raw": "CLOSED",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2025-08-09",
+            "raw": "CLOSED",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2025-08-10",
+            "raw": "CLOSED",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2025-08-07",
+      "today_covered": true,
+      "posted_through": "2025-08-10",
+      "days_past_end": 0,
+      "swimmable_today": 0
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 1,
+      "rows": 7,
+      "windows": 0,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2025-08-07T12:57:54-07:00",
+    "source": "https://web.archive.org/web/20250807125754id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2025-11-08T06:36:34-08:00",
+    "content_hash": "1732008b62db3f06",
+    "parsed": {
+      "updated_label": "2025-11-02",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2025-11-03",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2025-11-04",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2025-11-05",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2025-11-06",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2025-11-07",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2025-11-08",
+            "raw": "*USC hosting Men's Water Polo match Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2025-11-09",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2025-11-03",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2025-11-04",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2025-11-05",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2025-11-06",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2025-11-07",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2025-11-08",
+            "raw": "*USC hosting Men's Water Polo match Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2025-11-09",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2025-11-08",
+      "today_covered": true,
+      "posted_through": "2025-11-09",
+      "days_past_end": 0,
+      "swimmable_today": 0
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 21,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2025-11-08T06:36:34-08:00",
+    "source": "https://web.archive.org/web/20251108063634id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2025-12-09T00:47:47-08:00",
+    "content_hash": "9bd5aa25a9c7edd9",
+    "parsed": {
+      "updated_label": "2025-12-07",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2025-12-08",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2025-12-09",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2025-12-10",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2025-12-11",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2025-12-12",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2025-12-13",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2025-12-14",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2025-12-08",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2025-12-09",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2025-12-10",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2025-12-11",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2025-12-12",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2025-12-13",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2025-12-14",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2025-12-09",
+      "today_covered": true,
+      "posted_through": "2025-12-14",
+      "days_past_end": 0,
+      "swimmable_today": 4
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 19,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2025-12-09T00:47:47-08:00",
+    "source": "https://web.archive.org/web/20251209004747id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2026-01-14T19:11:18-08:00",
+    "content_hash": "37c8d06967bd2205",
+    "parsed": {
+      "updated_label": "2026-01-13",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-01-12",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-01-13",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-01-14",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-01-15",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-01-16",
+            "raw": "USC Swim & Dive is hosting a dual meet 6am-8am Dive Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-01-17",
+            "raw": "USC Swim & Dive is hosting a dual meet Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-01-18",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-01-12",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-01-13",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-01-14",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-01-15",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-01-16",
+            "raw": "USC Swim & Dive is hosting a dual meet 6am-8am Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-01-17",
+            "raw": "USC Swim & Dive is hosting a dual meet Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-01-18",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2026-01-14",
+      "today_covered": true,
+      "posted_through": "2026-01-18",
+      "days_past_end": 0,
+      "swimmable_today": 4
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 18,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2026-01-14T19:11:18-08:00",
+    "source": "https://web.archive.org/web/20260114191118id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2026-02-18T18:08:09-08:00",
+    "content_hash": "3825908af83d6bb1",
+    "parsed": {
+      "updated_label": "2026-02-16",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-02-16",
+            "raw": "*Holiday hours 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-02-17",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-02-18",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-02-19",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-02-20",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-02-21",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-02-22",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-02-16",
+            "raw": "*Holiday hours 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-02-17",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-02-18",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-02-19",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-02-20",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-02-21",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                720
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-02-22",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2026-02-18",
+      "today_covered": true,
+      "posted_through": "2026-02-22",
+      "days_past_end": 0,
+      "swimmable_today": 4
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 22,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2026-02-18T18:08:09-08:00",
+    "source": "https://web.archive.org/web/20260218180809id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2026-03-23T19:39:36-07:00",
+    "content_hash": "31f11678e4a2a03f",
+    "parsed": {
+      "updated_label": "2026-03-23",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-03-23",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-03-24",
+            "raw": "6am-8am Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-03-25",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-03-26",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-03-27",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-03-28",
+            "raw": "USC hosting a WP match Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-03-29",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-03-23",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-03-24",
+            "raw": "6am-8am Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-03-25",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-03-26",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-03-27",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-03-28",
+            "raw": "USC hosting a WP match Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-03-29",
+            "raw": "11am-2pm Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2026-03-23",
+      "today_covered": true,
+      "posted_through": "2026-03-29",
+      "days_past_end": 0,
+      "swimmable_today": 4
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 20,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2026-03-23T19:39:36-07:00",
+    "source": "https://web.archive.org/web/20260323193936id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2026-05-12T15:49:17-07:00",
+    "content_hash": "c1fa20b0bd46c773",
+    "parsed": {
+      "updated_label": "2026-05-10",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-05-11",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-05-12",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-05-13",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-05-14",
+            "raw": "4pm-6pm Dive Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-05-15",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-05-16",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-05-17",
+            "raw": "12pm-2pm Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-05-11",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-05-12",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-05-13",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-05-14",
+            "raw": "4pm-6pm Dive Pool",
+            "windows": [
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-05-15",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-05-16",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                720
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-05-17",
+            "raw": "12pm-2pm Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2026-05-12",
+      "today_covered": true,
+      "posted_through": "2026-05-17",
+      "days_past_end": 0,
+      "swimmable_today": 4
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 19,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2026-05-12T15:49:17-07:00",
+    "source": "https://web.archive.org/web/20260512154917id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2026-05-13T19:06:43-07:00",
+    "content_hash": "f6800cc3e4a04cff",
+    "parsed": {
+      "updated_label": "2026-05-12",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-05-11",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-05-12",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-05-13",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-05-14",
+            "raw": "1pm-2pm Dive Pool 4pm-6pm Dive Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-05-15",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-05-16",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-05-17",
+            "raw": "12pm-2pm Comp Pool",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-05-11",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-05-12",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-05-13",
+            "raw": "6am-8am Dive Pool 11am-12pm Dive Pool 12pm-2pm Comp Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-05-14",
+            "raw": "1pm-2pm Dive Pool 4pm-6pm Dive Pool",
+            "windows": [
+              [
+                780,
+                840
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-05-15",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                720
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-05-16",
+            "raw": "11am-12pm Dive Pool 12pm-2pm Comp Pool",
+            "windows": [
+              [
+                660,
+                720
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-05-17",
+            "raw": "12pm-2pm Comp Pool",
+            "windows": [],
+            "closed": null,
+            "flags": [
+              "not_mentioned"
+            ]
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "today": "2026-05-13",
+      "today_covered": true,
+      "posted_through": "2026-05-17",
+      "days_past_end": 0,
+      "swimmable_today": 4
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 19,
+      "anomaly_rows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "wayback",
+    "captured_at": "2026-05-13T19:06:43-07:00",
+    "source": "https://web.archive.org/web/20260513190643id_/https://recsports.usc.edu/rec-facilities-page/additional-facility-information/hours-of-operation"
+  },
+  {
+    "checked_at": "2026-08-23T19:45:18.756273-07:00",
+    "content_hash": "fde1eebbacaaf2fd",
+    "parsed": {
+      "updated_label": "2026-08-17",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-08-17",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-08-18",
+            "raw": "12pm-1pm",
+            "windows": [
+              [
+                720,
+                780
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-08-19",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-08-20",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-08-21",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-08-22",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-08-16",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": [
+              "outside_posted_week"
+            ]
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-08-17",
+            "raw": "5pm-6pm",
+            "windows": [
+              [
+                1020,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-08-18",
+            "raw": "6am-8am, 11am-12pm, 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-08-19",
+            "raw": "6am-8am, 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-08-20",
+            "raw": "6am-8am",
+            "windows": [
+              [
+                360,
+                480
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-08-21",
+            "raw": "6am-8am",
+            "windows": [
+              [
+                360,
+                480
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-08-22",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-08-16",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": [
+              "outside_posted_week"
+            ]
+          }
+        ]
+      },
+      "unconsumed": []
+    },
+    "coverage": {
+      "today": "2026-08-23",
+      "today_covered": false,
+      "posted_through": "2026-08-22",
+      "days_past_end": 1,
+      "swimmable_today": null
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 9,
+      "anomaly_rows": 2,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "live"
+  }
+]

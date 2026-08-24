@@ -1,0 +1,81 @@
+{
+  "checks_total": 7,
+  "changes_total": 14,
+  "checks_with_today_covered": 0,
+  "coverage_rate": 0.0,
+  "median_post_lag_hours": 66.1,
+  "weeks": [
+    {
+      "week_of": "2024-11-11",
+      "first_seen": "2024-11-19T07:18:50-08:00",
+      "lag_hours": 199.3,
+      "censored": false
+    },
+    {
+      "week_of": "2024-11-18",
+      "first_seen": "2024-11-19T07:18:50-08:00",
+      "lag_hours": 31.3,
+      "censored": false
+    },
+    {
+      "week_of": "2025-01-13",
+      "first_seen": "2025-01-14T22:57:19-08:00",
+      "lag_hours": 47.0,
+      "censored": false
+    },
+    {
+      "week_of": "2025-04-21",
+      "first_seen": "2025-04-21T08:11:36-07:00",
+      "lag_hours": 8.2,
+      "censored": false
+    },
+    {
+      "week_of": "2025-08-04",
+      "first_seen": "2025-08-07T12:57:54-07:00",
+      "lag_hours": 85.0,
+      "censored": false
+    },
+    {
+      "week_of": "2025-11-03",
+      "first_seen": "2025-11-08T06:36:34-08:00",
+      "lag_hours": 126.6,
+      "censored": false
+    },
+    {
+      "week_of": "2025-12-08",
+      "first_seen": "2025-12-09T00:47:47-08:00",
+      "lag_hours": 24.8,
+      "censored": false
+    },
+    {
+      "week_of": "2026-01-12",
+      "first_seen": "2026-01-14T19:11:18-08:00",
+      "lag_hours": 67.2,
+      "censored": false
+    },
+    {
+      "week_of": "2026-02-16",
+      "first_seen": "2026-02-18T18:08:09-08:00",
+      "lag_hours": 66.1,
+      "censored": false
+    },
+    {
+      "week_of": "2026-03-23",
+      "first_seen": "2026-03-23T19:39:36-07:00",
+      "lag_hours": 19.7,
+      "censored": false
+    },
+    {
+      "week_of": "2026-05-11",
+      "first_seen": "2026-05-12T15:49:17-07:00",
+      "lag_hours": 39.8,
+      "censored": false
+    },
+    {
+      "week_of": "2026-08-17",
+      "first_seen": "2026-08-23T19:45:18.756273-07:00",
+      "lag_hours": 163.8,
+      "censored": false
+    }
+  ]
+}

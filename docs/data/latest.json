@@ -1,0 +1,192 @@
+{
+  "checked_at": "2026-08-23T20:13:28.250096-07:00",
+  "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
+  "content_hash": "fde1eebbacaaf2fd",
+  "conditional_304": false,
+  "parsed": {
+    "updated_label": "2026-08-17",
+    "pools": {
+      "Comp Pool": [
+        {
+          "weekday": "Mon",
+          "date": "2026-08-17",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": []
+        },
+        {
+          "weekday": "Tue",
+          "date": "2026-08-18",
+          "raw": "12pm-1pm",
+          "windows": [
+            [
+              720,
+              780
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Wed",
+          "date": "2026-08-19",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": []
+        },
+        {
+          "weekday": "Thu",
+          "date": "2026-08-20",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": []
+        },
+        {
+          "weekday": "Fri",
+          "date": "2026-08-21",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": []
+        },
+        {
+          "weekday": "Sat",
+          "date": "2026-08-22",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": []
+        },
+        {
+          "weekday": "Sun",
+          "date": "2026-08-16",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": [
+            "outside_posted_week"
+          ]
+        }
+      ],
+      "Dive Pool": [
+        {
+          "weekday": "Mon",
+          "date": "2026-08-17",
+          "raw": "5pm-6pm",
+          "windows": [
+            [
+              1020,
+              1080
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Tue",
+          "date": "2026-08-18",
+          "raw": "6am-8am, 11am-12pm, 4pm-6pm",
+          "windows": [
+            [
+              360,
+              480
+            ],
+            [
+              660,
+              720
+            ],
+            [
+              960,
+              1080
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Wed",
+          "date": "2026-08-19",
+          "raw": "6am-8am, 4pm-6pm",
+          "windows": [
+            [
+              360,
+              480
+            ],
+            [
+              960,
+              1080
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Thu",
+          "date": "2026-08-20",
+          "raw": "6am-8am",
+          "windows": [
+            [
+              360,
+              480
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Fri",
+          "date": "2026-08-21",
+          "raw": "6am-8am",
+          "windows": [
+            [
+              360,
+              480
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Sat",
+          "date": "2026-08-22",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": []
+        },
+        {
+          "weekday": "Sun",
+          "date": "2026-08-16",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": [
+            "outside_posted_week"
+          ]
+        }
+      ]
+    },
+    "unconsumed": []
+  },
+  "coverage": {
+    "today": "2026-08-23",
+    "today_covered": false,
+    "posted_through": "2026-08-22",
+    "days_past_end": 1,
+    "swimmable_today": null
+  },
+  "parse_health": {
+    "status": "ok",
+    "pools": 2,
+    "rows": 14,
+    "windows": 9,
+    "anomaly_rows": 2,
+    "unattributed_windows": 0,
+    "unconsumed": [],
+    "unconsumed_total": 0
+  },
+  "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 8/17/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 8/17: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 8/18: 12pm-1pm\u00a0</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 8/19: Closed</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 8/20: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 8/21: Closed</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 8/22: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 8/16: Closed</p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 8/17: 5pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 8/18: 6am-8am, 11am-12pm, 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 8/19: 6am-8am, 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 8/20: 6am-8am</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 8/21: 6am-8am</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 8/22: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 8/16: Closed</p>"
+}

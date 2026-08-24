@@ -1,0 +1,84 @@
+name: watch
+
+on:
+  schedule:
+    # They post on Sunday or Monday — 10 of 14 recorded updates landed within a
+    # day of the week they cover. So watch that window closely and the rest of
+    # the week loosely, rather than paying for hourly checks around the clock.
+    #
+    # Sunday 12:00 UTC through Monday 23:00 UTC, hourly. (UTC, so this covers
+    # Sunday morning PT through Monday afternoon PT.)
+    - cron: "37 12-23 * * 0"
+    - cron: "37 0-23 * * 1"
+    # The rest of the week, every six hours — mid-week corrections do happen.
+    - cron: "37 1,7,13,19 * * 2-6"
+    # :37 rather than :00 on purpose. GitHub queues scheduled jobs and the top
+    # of the hour is the most contended slot, where runs get delayed or dropped.
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # Fixture-only, no network. If the parser is broken, don't append a
+      # bogus snapshot to the dataset — fail before the fetch.
+      - run: python -m pytest tests/ -q
+
+      # The ETag cache and the notifier's "last announced" marker both live
+      # outside git, so a no-op check doesn't make a commit.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .cache.json
+            .notified.json
+          key: swimwatch-cache-${{ github.run_id }}
+          restore-keys: swimwatch-cache-
+
+      # Exits 2 when the parser reads no rows at all, which fails the job
+      # loudly rather than committing an empty schedule.
+      - run: python scrape.py
+
+      # Only speaks when the content hash actually moved. Never fails the job:
+      # a broken mailbox must not stop the dataset from being recorded.
+      - name: Notify on change
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          PUSH_SUBSCRIPTIONS: ${{ secrets.PUSH_SUBSCRIPTIONS }}
+        run: python notify.py
+
+      - name: Commit if the schedule moved
+        run: |
+          git config user.name  "swimwatch"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data
+          if git diff --cached --quiet; then
+            echo "no change"
+          else
+            git commit -m "swim hours: $(python -c "import json;d=json.load(open('docs/data/latest.json'));print(d['coverage']['posted_through'] or 'unparsed')")"
+            git push
+          fi
