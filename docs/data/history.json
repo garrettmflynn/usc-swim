@@ -3480,5 +3480,222 @@
       "unconsumed_total": 0
     },
     "origin": "live"
+  },
+  {
+    "checked_at": "2026-08-24T09:57:54.502670-07:00",
+    "content_hash": "7f0f6b5a6141aa4b",
+    "parsed": {
+      "updated_label": "2026-08-24",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-08-24",
+            "raw": "12pm-1pm",
+            "windows": [
+              [
+                720,
+                780
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-08-25",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-08-26",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-08-27",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-08-28",
+            "raw": "12pm-2pm",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-08-29",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-08-30",
+            "raw": "11am-2pm",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-08-24",
+            "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-08-25",
+            "raw": "6am-8am & 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-08-26",
+            "raw": "6am-8am, 4pm-5pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                960,
+                1020
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-08-27",
+            "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-08-28",
+            "raw": "6am-8am, 11am-12pm & 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-08-29",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-08-30",
+            "raw": "Closed",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          }
+        ]
+      },
+      "unconsumed": []
+    },
+    "coverage": {
+      "today": "2026-08-24",
+      "today_covered": true,
+      "posted_through": "2026-08-30",
+      "days_past_end": 0,
+      "swimmable_today": 4
+    },
+    "parse_health": {
+      "status": "ok",
+      "pools": 2,
+      "rows": 14,
+      "windows": 16,
+      "anomaly_rows": 0,
+      "rows_with_dropped_windows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [],
+      "unconsumed_total": 0
+    },
+    "origin": "live"
   }
 ]
