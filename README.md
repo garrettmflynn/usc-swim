@@ -122,6 +122,13 @@ the most contended slot on GitHub's scheduler and gets delayed or dropped.
 Conditional GETs mean an unchanged page costs a 304 and commits nothing.
 Scheduled workflows are disabled after 60 days of repository inactivity.
 
+`should_commit.py` gates the commit. Every check rewrites `latest.json`
+because `checked_at` moves regardless, so an unqualified `git diff` is always
+dirty — left alone that is a commit per run, none of which say anything. The
+gate ignores per-check noise and commits when the schedule content, the
+history or the stats actually differ, plus once a day so the "last checked"
+stamp doesn't look abandoned.
+
 ## If the parser breaks
 
 Every snapshot keeps `raw_block`, the section's HTML as fetched. When they

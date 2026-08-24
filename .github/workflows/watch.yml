@@ -81,8 +81,10 @@ jobs:
           git config user.name  "swimwatch"
           git config user.email "actions@users.noreply.github.com"
           git add docs/data
-          if git diff --cached --quiet; then
-            echo "no change"
+          # `checked_at` moves every run, so an unqualified diff is always
+          # dirty. should_commit.py ignores that and the other per-check noise.
+          if ! python should_commit.py; then
+            echo "nothing worth committing"
           else
             git commit -m "swim hours: $(python -c "import json;d=json.load(open('docs/data/latest.json'));print(d['coverage']['posted_through'] or 'unparsed')")"
             git push
