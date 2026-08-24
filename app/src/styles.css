@@ -1056,3 +1056,18 @@ textarea,
 .tabbar {
   position: static;
 }
+
+/* ------------------------------------------------- tab bar, bottom spacing
+   The home-indicator inset already lifts the labels clear of the screen edge.
+   The bar was adding its own bottom padding on top of that, stacking two gaps
+   and leaving the labels floating ~43px up on an iPhone when 34 is correct. */
+
+.tabbar {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 8px);
+}
+
+.tabbar button {
+  /* Bottom spacing belongs to the bar, and is applied once. */
+  padding: 9px 4px 0;
+  min-height: 44px;
+}
