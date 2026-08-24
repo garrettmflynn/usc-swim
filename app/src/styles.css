@@ -1071,3 +1071,27 @@ textarea,
   padding: 9px 4px 0;
   min-height: 44px;
 }
+
+/* ================================================ shell, pinned to the glass
+   100dvh is not dependable inside a standalone iOS PWA: with viewport-fit=cover
+   it can resolve short of the physical screen, so the shell ended above the
+   home indicator and page background showed through beneath the tab bar.
+
+   position:fixed + inset:0 is measured against the visual viewport itself, so
+   the shell covers the glass edge to edge whatever dvh reports. The safe-area
+   padding inside the bar still keeps the labels clear of the indicator. */
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.app {
+  position: fixed;
+  inset: 0;
+  height: auto;
+  /* the grid rows still do the work: bar, scrolling content, bar */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
