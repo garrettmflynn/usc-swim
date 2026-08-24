@@ -1030,3 +1030,29 @@ textarea,
 
 /* the old floating tag is redundant now the day says it in words */
 .dayrow .tag { display: none; }
+
+/* ===================================================== app shell, corrected
+   The tab bar has to sit on the viewport, not at the end of the document. */
+
+.app {
+  /* A *definite* height, not min-height: with min-height the grid is free to
+     grow past the viewport, the body scrolls instead of the content area, and
+     the tab bar ends up at the bottom of a long page rather than on screen. */
+  height: 100svh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.app > main {
+  /* Grid items default to min-height: auto, which refuses to shrink below
+     content size — so overflow-y never engaged and main never scrolled. */
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* Now that the shell owns the viewport, the bars are simply its first and
+   last rows; sticky was compensating for a layout that didn't hold. */
+.appbar,
+.tabbar {
+  position: static;
+}

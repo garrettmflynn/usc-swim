@@ -1,13 +1,13 @@
 {
   "app": {
-    "sha": "5f1351d808a31bf9a4a5f87cd976101cd12179a5",
-    "short": "5f1351d",
+    "sha": "aae3d134a65911027fe382ed126f7d2e988fcc1b",
+    "short": "aae3d13",
     "branch": "main",
-    "builtAt": "2026-08-24T15:06:11.964Z",
+    "builtAt": "2026-08-24T15:06:44.146Z",
     "builtBy": "local",
     "assets": [
-      "index-BBcF3C05.js",
-      "index-BrCBboo7.css",
+      "index-BymlFCCi.js",
+      "index-DTSvGcs2.css",
       "workbox-window.prod.es5-BBnX5xw4.js"
     ]
   }
