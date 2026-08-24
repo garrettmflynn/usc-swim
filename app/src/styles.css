@@ -1110,3 +1110,23 @@ html, body {
   padding: 8px 4px 6px;
   min-height: 44px;
 }
+
+/* ------------------------------------------------------- tab bar, breathing
+   With viewport-fit=cover gone the safe-area value is 0 on iOS, so the floor
+   below is what actually sets the spacing — 4px read as sitting too low. A
+   named token so this is one number to turn, not three.
+
+   The max() still defers to a real inset if a platform reports one, so a
+   device that does render edge to edge keeps clearing its home indicator. */
+
+:root {
+  --bar-floor: 11px;
+}
+
+.tabbar {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), var(--bar-floor));
+}
+
+.tabbar button {
+  padding: 8px 4px 5px;
+}
