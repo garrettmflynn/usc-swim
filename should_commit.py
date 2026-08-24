@@ -22,8 +22,21 @@ from pathlib import Path
 DATA = Path(__file__).parent / "docs" / "data"
 # How stale the committed timestamp may get while nothing is changing.
 MAX_SILENCE = timedelta(hours=24)
-# Fields that change on every check and mean nothing on their own.
-NOISE = {"checked_at", "conditional_304"}
+# Fields that move on every check and say nothing about the schedule.
+#
+# latest.json stamps the time; stats.json counts the check. Both tick whether
+# or not USC touched anything, so both have to be excluded — leaving either in
+# means a commit per run, which is the thing this file exists to prevent.
+NOISE = {
+    "docs/data/latest.json": {"checked_at", "conditional_304"},
+    "docs/data/stats.json": {
+        "checks_total",
+        "checks_with_today_covered",
+        # derived from the counters above, so it moves with them
+        "coverage_rate",
+    },
+    "docs/data/history.json": set(),
+}
 
 
 def committed(path: str) -> dict | list | None:
@@ -37,12 +50,18 @@ def committed(path: str) -> dict | list | None:
         return None
 
 
-def significant(current: dict, previous: dict | None) -> bool:
+def strip(value, path: str):
+    """Drop the per-check bookkeeping so only real differences remain."""
+    noise = NOISE.get(path, set())
+    if not isinstance(value, dict) or not noise:
+        return value
+    return {k: v for k, v in value.items() if k not in noise}
+
+
+def significant(current, previous, path: str = "docs/data/latest.json") -> bool:
     if previous is None:
         return True
-    return {k: v for k, v in current.items() if k not in NOISE} != {
-        k: v for k, v in previous.items() if k not in NOISE
-    }
+    return strip(current, path) != strip(previous, path)
 
 
 def main() -> int:
@@ -54,7 +73,9 @@ def main() -> int:
         return 0
 
     for name in ("history.json", "stats.json"):
-        if json.loads((DATA / name).read_text()) != committed(f"docs/data/{name}"):
+        path = f"docs/data/{name}"
+        current = json.loads((DATA / name).read_text())
+        if significant(current, committed(path), path):
             print(f"{name} differs from HEAD — committing")
             return 0
 

@@ -119,3 +119,41 @@ def test_commits_when_nothing_is_committed_yet(repo):
     write, state = repo
     write(snapshot())
     assert should_commit.main() == 0
+
+
+def test_a_bumped_check_counter_alone_is_not_significant():
+    """stats.json counts every check, so its counters tick without news.
+
+    Missed on the first pass: the gate held on latest.json and then committed
+    anyway because stats.json had incremented.
+    """
+    before = {"checks_total": 8, "coverage_rate": 0.5, "changes_total": 3,
+              "checks_with_today_covered": 4, "median_post_lag_hours": 12.0}
+    after = {**before, "checks_total": 9, "coverage_rate": 0.444,
+             "checks_with_today_covered": 4}
+    assert not should_commit.significant(after, before, "docs/data/stats.json")
+
+
+def test_a_new_recorded_schedule_is_significant_in_stats():
+    before = {"checks_total": 8, "changes_total": 3, "median_post_lag_hours": 12.0}
+    after = {"checks_total": 9, "changes_total": 4, "median_post_lag_hours": 12.0}
+    assert should_commit.significant(after, before, "docs/data/stats.json")
+
+
+def test_a_moved_post_lag_median_is_significant():
+    before = {"checks_total": 8, "changes_total": 3, "median_post_lag_hours": 12.0}
+    after = {"checks_total": 9, "changes_total": 3, "median_post_lag_hours": 36.0}
+    assert should_commit.significant(after, before, "docs/data/stats.json")
+
+
+def test_skips_when_only_the_check_counters_moved(repo):
+    write, state = repo
+    now = datetime.now().astimezone().isoformat()
+    state["docs/data/latest.json"] = snapshot(checked_at=now)
+    state["docs/data/history.json"] = []
+    state["docs/data/stats.json"] = {"checks_total": 8, "coverage_rate": 0.5,
+                                     "changes_total": 3}
+    write(snapshot(checked_at=now), stats={"checks_total": 9,
+                                           "coverage_rate": 0.444,
+                                           "changes_total": 3})
+    assert should_commit.main() == 1
