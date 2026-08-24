@@ -45,6 +45,22 @@ export default function BuildInfo({ latest }: { latest: Latest }) {
     location.reload()
   }
 
+  // Measured on the device, because this class of layout bug is invisible
+  // anywhere the safe-area inset is 0 and dvh is dependable — i.e. everywhere
+  // I can test. Screenshot this and the numbers say what is actually wrong.
+  const probe = document.createElement('div')
+  probe.style.cssText =
+    'position:fixed;bottom:0;height:env(safe-area-inset-bottom,0px);width:0'
+  document.body.appendChild(probe)
+  const inset = Math.round(probe.getBoundingClientRect().height)
+  probe.remove()
+
+  const app = document.querySelector('.app')?.getBoundingClientRect()
+  const bar = document.querySelector('.tabbar')?.getBoundingClientRect()
+  const standalone =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    (navigator as { standalone?: boolean }).standalone === true
+
   const rows: Array<[string, string]> = [
     ['App commit', `${BUILD.short}${BUILD.dirty ? ' (uncommitted changes)' : ''}`],
     ['App built', when(BUILD.builtAt)],
@@ -59,6 +75,18 @@ export default function BuildInfo({ latest }: { latest: Latest }) {
     ],
     ['Last checked', when(latest.checked_at)],
     ['Service worker', swState],
+    ['Installed app', standalone ? 'yes (standalone)' : 'no (browser tab)'],
+    ['Viewport', `${window.innerWidth}x${window.innerHeight}`],
+    ['Screen', `${window.screen.width}x${window.screen.height}`],
+    ['Safe area bottom', `${inset}px`],
+    [
+      'Shell height',
+      app ? `${Math.round(app.height)}px (top ${Math.round(app.top)})` : '—',
+    ],
+    [
+      'Gap under tab bar',
+      bar ? `${Math.round(window.innerHeight - bar.bottom)}px` : '—',
+    ],
   ]
 
   return (
