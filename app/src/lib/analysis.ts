@@ -365,3 +365,183 @@ export function poolRhythm(history: Snapshot[]): PoolRhythm {
 
   return { overlapDates, hoursByPool: owned, datesObserved: perDate.size }
 }
+
+// --------------------------------------------------------------- deviations
+
+/**
+ * A posted day that departs from what that weekday normally looks like.
+ *
+ * The baseline is context; this is the part worth someone's attention. "Tuesday
+ * usually has a 6am and this week doesn't" changes whether you set an alarm,
+ * in a way that "Tuesday 6am is 83%" never does.
+ */
+export interface Deviation {
+  date: string
+  weekday: number
+  kind: 'missing' | 'added'
+  window: Window
+  /** Weeks this window appeared, out of weeks observed for that weekday. */
+  seen: number
+  known: number
+  rate: number
+}
+
+/** A window has to be this common before its absence counts as a deviation. */
+const USUAL = 0.6
+/** A posted window rarer than this counts as an unexpected addition. */
+const UNUSUAL = 0.25
+
+function sameWindow(a: Window, b: Window): boolean {
+  return a[0] === b[0] && a[1] === b[1]
+}
+
+/** The day's windows as posted, without repeats across pools. */
+function dedupe(windows: Window[]): Window[] {
+  const seen = new Set<string>()
+  const out: Window[] = []
+  for (const w of windows) {
+    const key = `${w[0]}:${w[1]}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push(w)
+  }
+  return out.sort((a, b) => a[0] - b[0])
+}
+
+/** Does any posted window cover this one's ground? Catches shortened slots. */
+function covered(posted: Window[], w: Window): boolean {
+  return posted.some((p) => p[0] <= w[0] && p[1] >= w[1])
+}
+
+/**
+ * Compare each posted day against its own weekday's history.
+ *
+ * Only days the page actually posted are judged — an expectation can't deviate
+ * from itself, and flagging unposted days would turn the whole of next week
+ * into false alarms.
+ */
+export function deviations(history: Snapshot[], latest: Snapshot): Deviation[] {
+  const out: Deviation[] = []
+  const posted = new Map<string, Window[]>()
+
+  for (const rows of Object.values(latest.parsed.pools)) {
+    for (const row of rows as Row[]) {
+      if (!row.date || row.flags.includes('outside_posted_week')) continue
+      // A pool the page never mentioned states nothing; only real postings count.
+      if (!row.windows.length && row.closed !== true) continue
+      posted.set(row.date, [...(posted.get(row.date) ?? []), ...row.windows])
+    }
+  }
+
+  for (const [date, windows] of posted) {
+    // Merged for the coverage test below, but NOT for spotting additions:
+    // merging 11am-12pm with 12pm-1pm invents an 11am-1pm block that no week
+    // in history ever contained, which reads as a brand-new slot.
+    const merged = merge(windows)
+    const distinct = dedupe(windows)
+    const weekday = (localDate(date).getDay() + 6) % 7
+    // Exclude this same week from its own baseline, or a change that has been
+    // up for several checks starts voting for itself.
+    const typical = typicalFor(
+      history.filter((h) => !coversDate(h, date)),
+      weekday,
+    )
+
+    for (const t of typical) {
+      const rate = t.known ? t.seen / t.known : 0
+      if (rate >= USUAL && !covered(merged, t.window)) {
+        out.push({ date, weekday, kind: 'missing', window: t.window,
+                   seen: t.seen, known: t.known, rate })
+      }
+    }
+
+    for (const w of distinct) {
+      const match = typical.find((t) => sameWindow(t.window, w))
+      const rate = match && match.known ? match.seen / match.known : 0
+      if (rate < UNUSUAL) {
+        out.push({ date, weekday, kind: 'added', window: w,
+                   seen: match?.seen ?? 0, known: match?.known ?? typical[0]?.known ?? 0,
+                   rate })
+      }
+    }
+  }
+
+  return out.sort((a, b) => a.date.localeCompare(b.date) || a.window[0] - b.window[0])
+}
+
+function coversDate(snap: Snapshot, date: string): boolean {
+  for (const rows of Object.values(snap.parsed.pools)) {
+    for (const row of rows as Row[]) if (row.date === date) return true
+  }
+  return false
+}
+
+// ------------------------------------------------------------ mid-week edits
+
+export interface MidWeekEdit {
+  /** Monday of the week that was edited. */
+  weekOf: string
+  /** When the edit was first seen. */
+  seenAt: string
+  /** Days into the week the edit landed (0 = Monday). */
+  dayIntoWeek: number
+  from: string
+  to: string
+}
+
+/**
+ * Schedules that changed after their week had already started.
+ *
+ * The ordinary rhythm is: post on Sunday or Monday, leave it alone. An edit on
+ * Wednesday means something moved under a plan someone had already made, which
+ * is the surprise most worth knowing about.
+ */
+export function midWeekEdits(history: Snapshot[]): MidWeekEdit[] {
+  const byWeek = new Map<string, Snapshot[]>()
+
+  for (const snap of history) {
+    const dates = []
+    for (const rows of Object.values(snap.parsed.pools)) {
+      for (const row of rows as Row[]) {
+        if (row.date && !row.flags.includes('outside_posted_week')) dates.push(row.date)
+      }
+    }
+    if (!dates.length) continue
+    const first = localDate(dates.sort()[0]!)
+    first.setDate(first.getDate() - ((first.getDay() + 6) % 7))
+    const week = todayKey(first)
+    byWeek.set(week, [...(byWeek.get(week) ?? []), snap])
+  }
+
+  const edits: MidWeekEdit[] = []
+  for (const [week, snaps] of byWeek) {
+    const ordered = [...snaps].sort((a, b) => a.checked_at.localeCompare(b.checked_at))
+    const monday = localDate(week)
+    for (let i = 1; i < ordered.length; i++) {
+      const previous = ordered[i - 1]!
+      const current = ordered[i]!
+      if (previous.content_hash === current.content_hash) continue
+      const seen = new Date(current.checked_at)
+      const dayIntoWeek = Math.floor(
+        (localDate(todayKey(seen)).getTime() - monday.getTime()) / 86_400_000,
+      )
+      if (dayIntoWeek < 1 || dayIntoWeek > 6) continue // posted before the week began
+      edits.push({
+        weekOf: week,
+        seenAt: current.checked_at,
+        dayIntoWeek,
+        from: previous.content_hash,
+        to: current.content_hash,
+      })
+    }
+  }
+  return edits.sort((a, b) => b.seenAt.localeCompare(a.seenAt))
+}
+
+function todayKey(d: Date): string {
+  return [
+    d.getFullYear(),
+    String(d.getMonth() + 1).padStart(2, '0'),
+    String(d.getDate()).padStart(2, '0'),
+  ].join('-')
+}

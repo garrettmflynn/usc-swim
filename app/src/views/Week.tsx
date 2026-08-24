@@ -3,6 +3,7 @@ import { ChevronDown, CircleSlash, Clock3, Sparkles } from 'lucide-react'
 import type { Latest, Snapshot, Window } from '../types'
 import { DAYS, outlook, type DayOutlook } from '../lib/analysis'
 import { clock, todayISO } from '../lib/format'
+import Deviations from '../components/Deviations'
 
 const DAY_START = 5 * 60
 const DAY_END = 20 * 60
@@ -68,6 +69,8 @@ export default function Week({
           Those show what that weekday usually looks like.
         </p>
       )}
+
+      <Deviations latest={latest} history={history} upcomingOnly />
 
       <ol className="daylist">
         {days.map((day) => (

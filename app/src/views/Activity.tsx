@@ -2,6 +2,7 @@ import type { Latest, Snapshot, Stats } from '../types'
 import { shortDate, stamp, pct } from '../lib/format'
 import Health from '../components/Health'
 import Board from '../components/Board'
+import Deviations from '../components/Deviations'
 
 /** What they've posted, what changed, and whether the parser still works. */
 export default function Activity({
@@ -37,6 +38,7 @@ export default function Activity({
   return (
     <div className="view">
       <Health latest={latest} history={history} />
+      <Deviations latest={latest} history={history} />
       <Board latest={latest} />
 
       <section className="tiles">

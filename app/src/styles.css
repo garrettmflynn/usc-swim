@@ -993,3 +993,24 @@ textarea,
   .kv > div { flex-direction: column; gap: 2px; padding: 6px 0; }
   .kv dt { flex-basis: auto; }
 }
+
+/* ------------------------------------------------------------- deviations */
+
+.deviations .devday h3 { margin: 0 0 6px; color: var(--ink-soft); }
+.deviations .devday + .devday { margin-top: 4px; }
+.deviations ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+.deviations li {
+  display: flex; align-items: baseline; gap: 8px;
+  font-family: var(--data); font-size: 12px;
+  padding: 7px 10px; border-radius: var(--r-sm);
+}
+.deviations li svg { align-self: center; }
+.deviations li.missing { background: color-mix(in srgb, var(--rope) 11%, transparent); color: var(--rope); }
+.deviations li.added { background: color-mix(in srgb, var(--pool-lit) 12%, transparent); color: var(--pool); }
+.deviations li .w { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.deviations li .why { color: var(--ink-soft); font-size: 11px; }
+
+@media (max-width: 430px) {
+  .deviations li { flex-wrap: wrap; gap: 3px 8px; }
+  .deviations li .why { flex: 1 1 100%; padding-left: 22px; }
+}

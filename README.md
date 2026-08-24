@@ -33,6 +33,19 @@ was shut. Anything the parser can't account for is reported rather than dropped.
 
 **The week ahead** — seven days, posted where posted, expected where not.
 
+**What's different this week** — the part that actually changes a decision.
+Each posted day is compared against its own weekday's history, that week
+excluded from its own baseline. A slot the weekday usually has and this week
+doesn't is called out ("Tue 6-8am not posted — usually here 10 of 11 weeks"),
+as is an hour that turns up which rarely or never appears. Mid-week edits are
+flagged separately: the ordinary rhythm is post on Sunday, leave it alone, so
+a Wednesday change means something moved under a plan you already made.
+
+Notifications lead with the delta rather than announcing that something
+changed — a message you have to open the app to interpret is barely better
+than no message. A new week reads as "New swim week posted"; an edit to a week
+already up reads as "Fri: removed 6am-8am, 4pm-6pm".
+
 **Patterns** — how often each weekday and hour has actually been swimmable.
 Counts are shown alongside rates, because a denominator of two makes 100%
 meaningless. As of writing: weekday mornings and lunch run 66–91%, Saturday is

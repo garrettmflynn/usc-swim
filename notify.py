@@ -30,11 +30,14 @@ import json
 import os
 import smtplib
 import sys
+from datetime import date, datetime, timedelta
 from email.message import EmailMessage
 from pathlib import Path
 
 DATA = Path(__file__).parent / "docs" / "data"
 STATE = Path(__file__).parent / ".notified.json"
+
+WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 
 def env(name: str, default: str = "") -> str:
@@ -47,13 +50,106 @@ def clock(minutes: int) -> str:
     return f"{hour % 12 or 12}{f':{minute:02d}' if minute else ''}{suffix}"
 
 
-def summarize(latest: dict) -> tuple[str, str]:
+def windows_by_date(parsed: dict) -> dict[str, set[tuple[int, int]]]:
+    out: dict[str, set[tuple[int, int]]] = {}
+    for rows in parsed.get("pools", {}).values():
+        for row in rows:
+            if not row.get("date") or "outside_posted_week" in row.get("flags", []):
+                continue
+            out.setdefault(row["date"], set()).update(
+                (w[0], w[1]) for w in row["windows"]
+            )
+    return out
+
+
+def describe_change(latest: dict, history: list[dict]) -> list[str]:
+    """What moved since the schedule we last announced.
+
+    A notification that only says "the schedule changed" makes you open the app
+    to find out whether it matters. The thing worth waking someone for is the
+    delta — a lost 6am, or an edit landing mid-week under a plan they already
+    made.
+    """
+    previous = None
+    for entry in reversed(history[:-1]):
+        if entry.get("content_hash") != latest.get("content_hash"):
+            previous = entry
+            break
+    if previous is None:
+        return []
+
+    before = windows_by_date(previous["parsed"])
+    after = windows_by_date(latest["parsed"])
+
+    # Only dates the two postings share can have *changed*. Dates that appear
+    # in just one of them are the week rolling over, and reporting a whole new
+    # week as "added everything, removed everything" buries the one line that
+    # actually matters.
+    shared = sorted(set(before) & set(after))
+    fresh = sorted(set(after) - set(before))
+
+    lines: list[str] = []
+    for iso in shared:
+        gone = sorted(before[iso] - after[iso])
+        new = sorted(after[iso] - before[iso])
+        if not gone and not new:
+            continue
+        day = date.fromisoformat(iso)
+        parts = []
+        if gone:
+            parts.append("removed " + ", ".join(f"{clock(a)}-{clock(b)}" for a, b in gone))
+        if new:
+            parts.append("added " + ", ".join(f"{clock(a)}-{clock(b)}" for a, b in new))
+        lines.append(f"  {WEEKDAYS[day.weekday()]} {iso}: " + "; ".join(parts))
+
+    if fresh and not lines:
+        lines.append(f"  A new week is up: {fresh[0]} to {fresh[-1]}.")
+    elif fresh:
+        lines.append(f"  Also newly posted: {fresh[0]} to {fresh[-1]}.")
+    return lines
+
+
+def mid_week(latest: dict) -> str | None:
+    """Flag an edit that lands after its own week has already started."""
+    dates = sorted(windows_by_date(latest["parsed"]))
+    if not dates:
+        return None
+    first = date.fromisoformat(dates[0])
+    monday = first - timedelta(days=first.weekday())
+    today = datetime.now().date()
+    day_in = (today - monday).days
+    if 1 <= day_in <= 6 and monday <= today:
+        return (
+            f"This landed on {WEEKDAYS[today.weekday()]}, "
+            f"day {day_in + 1} of the week it covers — a mid-week change."
+        )
+    return None
+
+
+def summarize(latest: dict, history: list[dict] | None = None) -> tuple[str, str]:
     """A subject line and a body someone can act on without opening anything."""
+    history = history or []
     cov = latest["coverage"]
     through = cov.get("posted_through") or "nothing"
-    subject = f"Swim hours updated — posted through {through}"
 
-    lines = [f"USC posted a new rec swim schedule (through {through})."]
+    changes = describe_change(latest, history)
+    warning = mid_week(latest)
+
+    if warning:
+        subject = f"Swim hours changed mid-week — posted through {through}"
+    elif changes and changes[0].lstrip().startswith("A new week"):
+        subject = f"New swim week posted — through {through}"
+    elif changes:
+        subject = f"Swim hours changed — {len(changes)} day(s) differ"
+    else:
+        subject = f"Swim hours updated — posted through {through}"
+
+    lines = []
+    if warning:
+        lines += [warning, ""]
+    if changes:
+        lines += ["What changed since the last posting:", *changes, ""]
+    lines.append(f"Full schedule (through {through}):")
     if latest["parsed"].get("updated_label"):
         lines.append(f"They stamped it {latest['parsed']['updated_label']}.")
     lines.append("")
@@ -173,6 +269,8 @@ def main() -> int:
         print("no latest.json — nothing to notify about")
         return 0
     latest = json.loads(latest_path.read_text())
+    history_path = DATA / "history.json"
+    history = json.loads(history_path.read_text()) if history_path.exists() else []
 
     digest = latest.get("content_hash")
     previous = None
@@ -183,7 +281,7 @@ def main() -> int:
             previous = None
 
     if args.test:
-        subject, body = summarize(latest)
+        subject, body = summarize(latest, history)
         print("test mode — sending regardless of change, marker left alone")
         print(send_email(f"[test] {subject}", body))
         print(send_push(f"[test] {subject}", body))
@@ -199,7 +297,7 @@ def main() -> int:
         print(f"first run, baseline recorded ({digest}) — not notifying")
         return 0
 
-    subject, body = summarize(latest)
+    subject, body = summarize(latest, history)
     print(send_email(subject, body))
     print(send_push(subject, body))
     STATE.write_text(json.dumps({"content_hash": digest}, indent=2))
