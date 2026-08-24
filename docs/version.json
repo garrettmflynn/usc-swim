@@ -3,11 +3,11 @@
     "sha": "5f1351d808a31bf9a4a5f87cd976101cd12179a5",
     "short": "5f1351d",
     "branch": "main",
-    "builtAt": "2026-08-24T14:59:58.841Z",
-    "builtBy": "github-actions",
+    "builtAt": "2026-08-24T15:06:11.964Z",
+    "builtBy": "local",
     "assets": [
+      "index-BBcF3C05.js",
       "index-BrCBboo7.css",
-      "index-Cb5K8T9g.js",
       "workbox-window.prod.es5-BBnX5xw4.js"
     ]
   }

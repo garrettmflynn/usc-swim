@@ -27,6 +27,9 @@ export default function Settings({
   const [state, setState] = useState<PushState | 'working'>('ready')
   const [payload, setPayload] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)
+  // Only revealed if the clipboard refuses; otherwise there is no reason to
+  // put a device's push endpoint on screen.
+  const [reveal, setReveal] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -65,7 +68,8 @@ export default function Settings({
       setCopied(true)
       setTimeout(() => setCopied(false), 2200)
     } catch {
-      setError('Couldn’t reach the clipboard — select the text below and copy it.')
+      setReveal(true)
+      setError('Couldn’t reach the clipboard. Select the text below and copy it.')
     }
   }
 
@@ -126,7 +130,9 @@ export default function Settings({
                 Turn off
               </button>
             </div>
-            <textarea readOnly value={payload ?? ''} rows={4} spellCheck={false} />
+            {reveal && (
+              <textarea readOnly value={payload ?? ''} rows={4} spellCheck={false} />
+            )}
           </>
         )}
 
