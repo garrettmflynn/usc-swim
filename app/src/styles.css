@@ -1130,3 +1130,24 @@ html, body {
 .tabbar button {
   padding: 8px 4px 5px;
 }
+
+/* --------------------------------------------- deviations, on their own day
+   As a block above the day list these pushed the schedule off screen. One
+   line on the row it concerns; the detail only when that day is opened. */
+
+.daydev {
+  margin: 0; padding: 0 15px 11px;
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--data); font-size: 10.5px; color: var(--rope);
+}
+
+.devlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.devlist li {
+  display: flex; align-items: baseline; gap: 8px;
+  font-family: var(--data); font-size: 11px;
+  padding: 5px 9px; border-radius: 6px;
+}
+.devlist li.missing { background: color-mix(in srgb, var(--rope) 11%, transparent); color: var(--rope); }
+.devlist li.added { background: color-mix(in srgb, var(--pool-lit) 12%, transparent); color: var(--pool); }
+.devlist li .w { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.devlist li span:last-child { color: var(--ink-soft); }

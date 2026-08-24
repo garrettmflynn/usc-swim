@@ -1,9 +1,22 @@
 import { useMemo, useState } from 'react'
-import { BadgeCheck, ChevronDown, CircleSlash, Clock3, Sparkles } from 'lucide-react'
+import {
+  BadgeCheck,
+  ChevronDown,
+  CircleSlash,
+  Clock3,
+  Sparkles,
+  TriangleAlert,
+} from 'lucide-react'
 import type { Latest, Snapshot, Window } from '../types'
-import { DAYS, DAY_NAMES, outlook, type DayOutlook } from '../lib/analysis'
+import {
+  DAYS,
+  DAY_NAMES,
+  deviations,
+  outlook,
+  type DayOutlook,
+  type Deviation,
+} from '../lib/analysis'
 import { clock, todayISO } from '../lib/format'
-import Deviations from '../components/Deviations'
 
 const DAY_START = 5 * 60
 const DAY_END = 20 * 60
@@ -21,6 +34,15 @@ export default function Week({
   const todayIso = todayISO()
   const today = useMemo(() => new Date(`${todayIso}T12:00:00`), [todayIso])
   const days = useMemo(() => outlook(history, latest, today, 7), [history, latest, today])
+  // Deviations belong to the day they concern. As a block above the list they
+  // pushed the schedule off screen, which is the one thing this view is for.
+  const devByDate = useMemo(() => {
+    const map = new Map<string, Deviation[]>()
+    for (const d of deviations(history, latest)) {
+      map.set(d.date, [...(map.get(d.date) ?? []), d])
+    }
+    return map
+  }, [history, latest])
   const [open, setOpen] = useState<string | null>(days[0]?.date ?? null)
 
   const nowMin = new Date().getHours() * 60 + new Date().getMinutes()
@@ -71,8 +93,6 @@ export default function Week({
         </p>
       )}
 
-      <Deviations latest={latest} history={history} upcomingOnly />
-
       <ol className="daylist">
         {days.map((day) => (
           <DayRow
@@ -82,6 +102,7 @@ export default function Week({
             expanded={open === day.date}
             onToggle={() => setOpen(open === day.date ? null : day.date)}
             nowMin={nowMin}
+            devs={devByDate.get(day.date) ?? []}
           />
         ))}
       </ol>
@@ -95,13 +116,16 @@ function DayRow({
   expanded,
   onToggle,
   nowMin,
+  devs,
 }: {
   day: DayOutlook
   isToday: boolean
   expanded: boolean
   onToggle: () => void
   nowMin: number
+  devs: Deviation[]
 }) {
+  const missing = devs.filter((d) => d.kind === 'missing')
   const d = new Date(`${day.date}T12:00:00`)
   const empty = day.windows.length === 0
 
@@ -167,8 +191,33 @@ function DayRow({
         )}
       </div>
 
+      {missing.length > 0 && !expanded && (
+        <p className="daydev">
+          <TriangleAlert size={12} strokeWidth={2} aria-hidden="true" />
+          {missing.length} usual slot{missing.length === 1 ? '' : 's'} not posted
+        </p>
+      )}
+
       {expanded && (
         <div className="detail">
+          {devs.length > 0 && (
+            <ul className="devlist">
+              {devs.map((d) => (
+                <li className={d.kind} key={`${d.kind}-${d.window[0]}`}>
+                  <span className="w">
+                    {clock(d.window[0])}–{clock(d.window[1])}
+                  </span>
+                  <span>
+                    {d.kind === 'missing'
+                      ? `usually here ${d.seen} of ${d.known} weeks`
+                      : d.seen === 0
+                        ? `new — never seen in ${d.known} weeks`
+                        : `unusual — ${d.seen} of ${d.known} weeks`}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
           {day.source === 'posted' ? (
             <p>Posted by USC Rec Sports for this date.</p>
           ) : day.typical && day.typical.length > 0 ? (
