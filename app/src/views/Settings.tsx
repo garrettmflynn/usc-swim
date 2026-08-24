@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Bell, BellOff, Check, Copy, Info, Palette } from 'lucide-react'
+import BuildInfo from '../components/BuildInfo'
+import type { Latest } from '../types'
 import type { Prefs } from '../lib/prefs'
 import { applyTheme, savePrefs } from '../lib/prefs'
 import {
@@ -16,9 +18,11 @@ const VAPID = import.meta.env.VITE_VAPID_PUBLIC_KEY as string | undefined
 export default function Settings({
   prefs,
   onPrefs,
+  latest,
 }: {
   prefs: Prefs
   onPrefs: (next: Prefs) => void
+  latest: Latest
 }) {
   const [state, setState] = useState<PushState | 'working'>('ready')
   const [payload, setPayload] = useState<string | null>(null)
@@ -147,6 +151,8 @@ export default function Settings({
           ))}
         </div>
       </section>
+
+      <BuildInfo latest={latest} />
 
       <section className="panel">
         <h2><Info size={15} strokeWidth={2} aria-hidden="true" />About</h2>

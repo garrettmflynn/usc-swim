@@ -64,7 +64,7 @@ export default function App() {
       {tab === 'week' && <Week latest={latest} history={history} />}
       {tab === 'patterns' && <Patterns history={history} />}
       {tab === 'activity' && <Activity latest={latest} history={history} stats={stats} />}
-      {tab === 'settings' && <Settings prefs={prefs} onPrefs={setPrefs} />}
+      {tab === 'settings' && <Settings prefs={prefs} onPrefs={setPrefs} latest={latest} />}
     </Shell>
   )
 }

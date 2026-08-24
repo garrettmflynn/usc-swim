@@ -48,6 +48,14 @@ export interface ParseHealth {
   unconsumed_total: number
 }
 
+/** Who wrote a data file, and when. Stamped by scrape.py / backfill.py. */
+export interface Generator {
+  tool: string
+  version: string
+  git_sha?: string
+  written_at: string
+}
+
 export interface Snapshot {
   checked_at: string
   content_hash: string
@@ -63,6 +71,7 @@ export interface Latest extends Snapshot {
   source: string
   conditional_304: boolean
   raw_block?: string
+  generator?: Generator
 }
 
 export interface WeekLag {

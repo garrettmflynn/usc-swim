@@ -47,6 +47,23 @@ deliberately separate from whether USC's own data is wrong. A typo'd date is
 their mistake and doesn't mean the parser needs fixing; unrecognised lines do.
 A check that yields no rows at all exits non-zero and fails the workflow.
 
+## Knowing what you're looking at
+
+Every moving part stamps itself, because a service worker makes "is this the
+current build?" unanswerable by eye — a cached bundle looks exactly like a
+fresh one.
+
+  Settings -> Build   running commit vs deployed commit, build times, which
+                      tool and commit wrote the data, service-worker state
+  docs/version.json   the same facts over HTTP, so a deploy can be confirmed
+                      with curl instead of a browser
+  latest.json         a `generator` block: tool, version, commit, written_at
+
+When the running commit differs from the deployed one the panel says so and
+offers a reload that clears the caches. That distinction matters: a stale
+service worker and a stale deploy look identical from the outside and need
+opposite fixes.
+
 ## On a phone
 
 Built mobile-first and verified at 390 / 360 / 320 CSS pixels: no horizontal

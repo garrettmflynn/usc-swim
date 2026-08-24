@@ -1,0 +1,14 @@
+{
+  "app": {
+    "sha": "8bf64570db79b65c99b79dacf449a54b356cffdd",
+    "short": "8bf6457",
+    "branch": "main",
+    "builtAt": "2026-08-24T14:32:08.864Z",
+    "builtBy": "local",
+    "assets": [
+      "index-CFisWbri.css",
+      "index-CoOr70Ig.js",
+      "workbox-window.prod.es5-BBnX5xw4.js"
+    ]
+  }
+}

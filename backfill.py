@@ -54,6 +54,9 @@ SNAPSHOT = "https://web.archive.org/web/{ts}id_/https://{url}"
 # have no swim section at all (checked every capture back to 2019).
 DEFAULT_SINCE = "20241001"
 
+# Bump when a change alters what the legacy parser extracts.
+VERSION = "1.0.0"
+
 # The archived page is Beaver Builder; each facility is one accordion item.
 # That container is the section boundary — far more reliable than "walk until
 # the next h2", which on this page runs past into basketball and tennis.
@@ -376,6 +379,8 @@ def build_entries(since: str, dry_run: bool = False) -> tuple[list[dict], list[d
                 # Provenance matters for the stats: a capture time is not a
                 # post time, so these can never contribute a post-lag figure.
                 "origin": "wayback",
+                "generator": {**scrape.generator(), "tool": "backfill.py",
+                              "version": VERSION},
                 "captured_at": stamp.isoformat(),
                 "source": SNAPSHOT.format(ts=ts, url=LEGACY_URL),
             })

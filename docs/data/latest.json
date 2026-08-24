@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-08-24T00:42:14.885381-07:00",
+  "checked_at": "2026-08-24T07:30:59.975618-07:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
   "content_hash": "fde1eebbacaaf2fd",
   "conditional_304": false,
@@ -187,6 +187,12 @@
     "unattributed_windows": 0,
     "unconsumed": [],
     "unconsumed_total": 0
+  },
+  "generator": {
+    "tool": "scrape.py",
+    "version": "1.1.0",
+    "git_sha": "8bf64570db79",
+    "written_at": "2026-08-24T07:31:00.182483-07:00"
   },
   "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 8/17/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 8/17: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 8/18: 12pm-1pm\u00a0</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 8/19: Closed</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 8/20: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 8/21: Closed</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 8/22: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 8/16: Closed</p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 8/17: 5pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 8/18: 6am-8am, 11am-12pm, 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 8/19: 6am-8am, 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 8/20: 6am-8am</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 8/21: 6am-8am</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 8/22: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 8/16: Closed</p>"
 }

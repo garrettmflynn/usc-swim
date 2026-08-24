@@ -15,7 +15,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
+import subprocess
 import sys
 import unicodedata
 from datetime import date, datetime, timedelta, timezone
@@ -24,6 +26,10 @@ from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
+
+# Bump when a change alters what gets parsed out of the page, so a snapshot
+# can be traced to the code that produced it.
+VERSION = "1.1.0"
 
 URL = "https://recsports.usc.edu/rec-facilities/operating-hours/"
 CONTACT = "swimwatch (personal schedule monitor; contact: you@example.com)"
@@ -57,6 +63,31 @@ NOTE_RE = re.compile(
     r"lap\s+swim|please\s+note|updated|check\s+the\s+website|"
     r"hours?$|pool$|week\s+of|game\s*day|maintenance|see\s+ped|"
     r"schedule|notice|holiday|closed)", re.I)
+
+
+def generator() -> dict:
+    """Stamp who wrote this file and from which commit.
+
+    Data outlives the code that produced it. Without this, a snapshot that
+    looks wrong can't be traced to the parser version that wrote it, and
+    replaying history means guessing.
+    """
+    sha = os.environ.get("GITHUB_SHA", "")
+    if not sha:
+        try:
+            sha = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                capture_output=True, text=True, check=True,
+                cwd=Path(__file__).parent,
+            ).stdout.strip()
+        except Exception:
+            sha = ""
+    return {
+        "tool": Path(__file__).name,
+        "version": VERSION,
+        "git_sha": sha[:12] or "unknown",
+        "written_at": datetime.now(TZ).isoformat(),
+    }
 
 
 # ---------------------------------------------------------------- fetching
@@ -394,6 +425,7 @@ def main() -> int:
     if status == 304:
         latest = prior
         latest["checked_at"] = now.isoformat()
+        latest["generator"] = generator()
         latest["coverage"] = coverage(latest["parsed"], now)
         latest["conditional_304"] = True
     else:
@@ -408,6 +440,7 @@ def main() -> int:
             "parsed": parsed,
             "coverage": coverage(parsed, now),
             "parse_health": parse_health(parsed),
+            "generator": generator(),
             "raw_block": block,  # keep the source of truth for re-parsing later
         }
         if not history or history[-1]["content_hash"] != digest:

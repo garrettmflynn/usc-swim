@@ -1,6 +1,36 @@
+import { execSync } from 'node:child_process'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+
+/**
+ * Stamp the build so a running page can be compared against what was shipped.
+ *
+ * Service workers make "am I looking at the current build?" a real question —
+ * a cached bundle is indistinguishable from a fresh one until something looks
+ * wrong. Baking the commit and build time in makes the answer checkable
+ * instead of a guess.
+ */
+function gitInfo() {
+  const run = (cmd: string) => {
+    try {
+      return execSync(cmd, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+    } catch {
+      return ''
+    }
+  }
+  // GitHub Actions checks out a detached HEAD, so prefer its own env vars.
+  const sha = process.env.GITHUB_SHA || run('git rev-parse HEAD')
+  return {
+    sha: sha || 'unknown',
+    short: (sha || 'unknown').slice(0, 7),
+    branch: process.env.GITHUB_REF_NAME || run('git rev-parse --abbrev-ref HEAD') || 'unknown',
+    dirty: process.env.GITHUB_SHA ? false : run('git status --porcelain') !== '',
+    builtAt: new Date().toISOString(),
+  }
+}
+
+const BUILD = gitInfo()
 
 // Builds into ../docs, which is what GitHub Pages serves.
 //
@@ -8,6 +38,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 // the watcher and committed. Wiping the output directory on every build would
 // delete the history this whole project exists to collect.
 export default defineConfig({
+  define: {
+    __BUILD__: JSON.stringify(BUILD),
+  },
   plugins: [
     react(),
     VitePWA({
