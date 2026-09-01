@@ -1,8 +1,8 @@
 {
-  "checks_total": 52,
+  "checks_total": 53,
   "changes_total": 19,
-  "checks_with_today_covered": 34,
-  "coverage_rate": 0.654,
+  "checks_with_today_covered": 35,
+  "coverage_rate": 0.66,
   "median_post_lag_hours": 47.0,
   "weeks": [
     {
