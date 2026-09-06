@@ -1,15 +1,25 @@
 {
-  "checked_at": "2026-09-05T14:37:00.070028-07:00",
+  "checked_at": "2026-09-06T08:43:13.071151-07:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
-  "content_hash": "ba4ab382163d3f84",
+  "content_hash": "fd6903b58bfe2757",
   "conditional_304": false,
   "parsed": {
-    "updated_label": "2026-08-31",
+    "updated_label": "2026-09-05",
     "pools": {
       "Comp Pool": [
         {
+          "weekday": "Sun",
+          "date": "2026-09-06",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": [
+            "outside_posted_week"
+          ]
+        },
+        {
           "weekday": "Mon",
-          "date": "2026-08-31",
+          "date": "2026-09-07",
           "raw": "12pm-2pm",
           "windows": [
             [
@@ -22,7 +32,7 @@
         },
         {
           "weekday": "Tue",
-          "date": "2026-09-01",
+          "date": "2026-09-08",
           "raw": "Closed",
           "windows": [],
           "closed": true,
@@ -30,7 +40,7 @@
         },
         {
           "weekday": "Wed",
-          "date": "2026-09-02",
+          "date": "2026-09-09",
           "raw": "12pm-2pm",
           "windows": [
             [
@@ -43,7 +53,7 @@
         },
         {
           "weekday": "Thu",
-          "date": "2026-09-03",
+          "date": "2026-09-10",
           "raw": "Closed",
           "windows": [],
           "closed": true,
@@ -51,12 +61,12 @@
         },
         {
           "weekday": "Fri",
-          "date": "2026-09-04",
-          "raw": "4pm-6pm",
+          "date": "2026-09-11",
+          "raw": "12pm-2pm",
           "windows": [
             [
-              960,
-              1080
+              720,
+              840
             ]
           ],
           "closed": false,
@@ -64,7 +74,7 @@
         },
         {
           "weekday": "Sat",
-          "date": "2026-09-05",
+          "date": "2026-09-12",
           "raw": "12pm-2pm",
           "windows": [
             [
@@ -77,17 +87,104 @@
         },
         {
           "weekday": "Sun",
-          "date": "2026-09-06",
-          "raw": "Closed",
-          "windows": [],
-          "closed": true,
+          "date": "2026-09-13",
+          "raw": "11am-2pm",
+          "windows": [
+            [
+              660,
+              840
+            ]
+          ],
+          "closed": false,
           "flags": []
         }
       ],
       "Dive Pool": [
         {
+          "weekday": "Sun",
+          "date": "2026-09-06",
+          "raw": "Closed",
+          "windows": [],
+          "closed": true,
+          "flags": [
+            "outside_posted_week"
+          ]
+        },
+        {
           "weekday": "Mon",
-          "date": "2026-08-31",
+          "date": "2026-09-07",
+          "raw": "11am-12pm & 4pm-6pm",
+          "windows": [
+            [
+              660,
+              720
+            ],
+            [
+              960,
+              1080
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Tue",
+          "date": "2026-09-08",
+          "raw": "6am-8am & 4pm-6pm",
+          "windows": [
+            [
+              360,
+              480
+            ],
+            [
+              960,
+              1080
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Wed",
+          "date": "2026-09-09",
+          "raw": "6am-8am, 11am-12pm. & 4pm-6pm",
+          "windows": [
+            [
+              360,
+              480
+            ],
+            [
+              660,
+              720
+            ],
+            [
+              960,
+              1080
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Thu",
+          "date": "2026-09-10",
+          "raw": "6am-8am & 4pm-6pm",
+          "windows": [
+            [
+              360,
+              480
+            ],
+            [
+              960,
+              1080
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Fri",
+          "date": "2026-09-11",
           "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
           "windows": [
             [
@@ -107,76 +204,8 @@
           "flags": []
         },
         {
-          "weekday": "Tue",
-          "date": "2026-09-01",
-          "raw": "6am-8am & 4pm-6pm",
-          "windows": [
-            [
-              360,
-              480
-            ],
-            [
-              960,
-              1080
-            ]
-          ],
-          "closed": false,
-          "flags": []
-        },
-        {
-          "weekday": "Wed",
-          "date": "2026-09-02",
-          "raw": "6am-8am, 4pm-6pm",
-          "windows": [
-            [
-              360,
-              480
-            ],
-            [
-              960,
-              1080
-            ]
-          ],
-          "closed": false,
-          "flags": []
-        },
-        {
-          "weekday": "Thu",
-          "date": "2026-09-03",
-          "raw": "6am-8am & 4pm-6pm",
-          "windows": [
-            [
-              360,
-              480
-            ],
-            [
-              960,
-              1080
-            ]
-          ],
-          "closed": false,
-          "flags": []
-        },
-        {
-          "weekday": "Fri",
-          "date": "2026-09-04",
-          "raw": "6am-8am & 11am-1pm",
-          "windows": [
-            [
-              360,
-              480
-            ],
-            [
-              660,
-              780
-            ]
-          ],
-          "closed": false,
-          "flags": []
-        },
-        {
           "weekday": "Sat",
-          "date": "2026-09-05",
+          "date": "2026-09-12",
           "raw": "11am-12pm",
           "windows": [
             [
@@ -189,7 +218,7 @@
         },
         {
           "weekday": "Sun",
-          "date": "2026-09-06",
+          "date": "2026-09-13",
           "raw": "Closed",
           "windows": [],
           "closed": true,
@@ -200,18 +229,18 @@
     "unconsumed": []
   },
   "coverage": {
-    "today": "2026-09-05",
-    "today_covered": true,
-    "posted_through": "2026-09-06",
+    "today": "2026-09-06",
+    "today_covered": false,
+    "posted_through": "2026-09-13",
     "days_past_end": 0,
-    "swimmable_today": 2
+    "swimmable_today": null
   },
   "parse_health": {
     "status": "ok",
     "pools": 2,
-    "rows": 14,
-    "windows": 16,
-    "anomaly_rows": 0,
+    "rows": 16,
+    "windows": 18,
+    "anomaly_rows": 2,
     "rows_with_dropped_windows": 0,
     "unattributed_windows": 0,
     "unconsumed": [],
@@ -220,8 +249,8 @@
   "generator": {
     "tool": "scrape.py",
     "version": "1.1.0",
-    "git_sha": "7c7fc99e0f19",
-    "written_at": "2026-09-05T14:37:00.315785-07:00"
+    "git_sha": "96a2d6859328",
+    "written_at": "2026-09-06T08:43:13.294930-07:00"
   },
-  "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 8/31/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 8/31: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 9/1: Closed</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 9/2: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 9/3: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 9/4: 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 9/5: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 9/6: Closed</p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 8/31: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 9/1: 6am-8am &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 9/2: 6am-8am, 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 9/3: 6am-8am &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 9/4: 6am-8am &amp; 11am-1pm </p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 9/5: 11am-12pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 9/6: Closed</p>"
+  "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 9/5/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sun, 9/6: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Mon, 9/7: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Tue, 9/8: Closed</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 9/9: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 9/10: Closed</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 9/11: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 9/12: 12pm-2pm</p>\n<p class=\"wp-block-paragraph\">Sun, 9/13: 11am-2pm</p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sun, 9/6: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Mon, 9/7: 11am-12pm &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Tue, 9/8: 6am-8am &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Wed, 9/9: 6am-8am, 11am-12pm. &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 9/10: 6am-8am &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 9/11: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 9/12: 11am-12pm</p>\n<p class=\"wp-block-paragraph\">Sun, 9/13: Closed</p>"
 }
