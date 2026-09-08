@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-07T23:29:25.725766-07:00",
+  "checked_at": "2026-09-08T05:15:49.463245-07:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
   "content_hash": "fd6903b58bfe2757",
   "conditional_304": false,
@@ -229,11 +229,11 @@
     "unconsumed": []
   },
   "coverage": {
-    "today": "2026-09-07",
+    "today": "2026-09-08",
     "today_covered": true,
     "posted_through": "2026-09-13",
     "days_past_end": 0,
-    "swimmable_today": 3
+    "swimmable_today": 2
   },
   "parse_health": {
     "status": "ok",
@@ -249,8 +249,8 @@
   "generator": {
     "tool": "scrape.py",
     "version": "1.1.0",
-    "git_sha": "ef615fceb6b9",
-    "written_at": "2026-09-07T23:29:25.904098-07:00"
+    "git_sha": "2a7a8e1dd309",
+    "written_at": "2026-09-08T05:15:49.981493-07:00"
   },
   "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 9/5/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sun, 9/6: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Mon, 9/7: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Tue, 9/8: Closed</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 9/9: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 9/10: Closed</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 9/11: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 9/12: 12pm-2pm</p>\n<p class=\"wp-block-paragraph\">Sun, 9/13: 11am-2pm</p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sun, 9/6: Closed</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Mon, 9/7: 11am-12pm &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Tue, 9/8: 6am-8am &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Wed, 9/9: 6am-8am, 11am-12pm. &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 9/10: 6am-8am &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 9/11: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 9/12: 11am-12pm</p>\n<p class=\"wp-block-paragraph\">Sun, 9/13: Closed</p>"
 }
