@@ -1,16 +1,10 @@
 {
-  "checks_total": 102,
-  "changes_total": 21,
+  "checks_total": 103,
+  "changes_total": 22,
   "checks_with_today_covered": 78,
-  "coverage_rate": 0.765,
+  "coverage_rate": 0.757,
   "median_post_lag_hours": 39.8,
   "weeks": [
-    {
-      "week_of": "2025-04-21",
-      "first_seen": "2025-04-21T08:11:36-07:00",
-      "lag_hours": 8.2,
-      "censored": false
-    },
     {
       "week_of": "2025-08-04",
       "first_seen": "2025-08-07T12:57:54-07:00",
@@ -75,6 +69,12 @@
       "week_of": "2026-09-07",
       "first_seen": "2026-09-06T08:43:13.071151-07:00",
       "lag_hours": -15.3,
+      "censored": false
+    },
+    {
+      "week_of": "2026-09-14",
+      "first_seen": "2026-09-13T22:23:07.264638-07:00",
+      "lag_hours": -1.6,
       "censored": false
     }
   ]
