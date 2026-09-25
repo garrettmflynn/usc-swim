@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-25T11:03:02.737035-07:00",
+  "checked_at": "2026-09-25T15:43:31.886515-07:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
   "content_hash": "f04f84ce934f1326",
   "conditional_304": false,
@@ -239,8 +239,8 @@
   "generator": {
     "tool": "scrape.py",
     "version": "1.1.0",
-    "git_sha": "6cb68da8b487",
-    "written_at": "2026-09-25T11:03:02.870467-07:00"
+    "git_sha": "9fda5ff09003",
+    "written_at": "2026-09-25T15:43:32.072919-07:00"
   },
   "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 9/20/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 9/21: 12pm-2pm </p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 9/22: CLOSED</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 9/23: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 9/24: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 9/25: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 9/26: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 9/27: CLOSED <br/>*USC Home WP match*</p>\n<p class=\"wp-block-paragraph\"></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 9/21: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 9/22: 6am-8am &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 9/23: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 9/24: 11am-12pm &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 9/25: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 9/26: 11am-12pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 9/27: CLOSED <br/>*USC Home WP match*</p>\n<p class=\"wp-block-paragraph\"></p>"
 }
