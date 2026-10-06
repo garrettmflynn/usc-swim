@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-05T15:09:31.302268-07:00",
+  "checked_at": "2026-10-05T19:28:25.794331-07:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
   "content_hash": "e69b6a3386d2fc84",
   "conditional_304": false,
@@ -243,8 +243,8 @@
   "generator": {
     "tool": "scrape.py",
     "version": "1.1.0",
-    "git_sha": "ba579addb869",
-    "written_at": "2026-10-05T15:09:31.483498-07:00"
+    "git_sha": "2b283502eb96",
+    "written_at": "2026-10-05T19:28:26.047532-07:00"
   },
   "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 9/27/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sun, 10/4: CLOSED <br/>*USC Home WP match*</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Mon, 10/5: 12pm-*<strong>1pm</strong></p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Tue, 10/6: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 10/7: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 10/8: CLOSED<br/>*USC Home Swim &amp; Dive Meet </p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 10/9: CLOSED<br/>*USC Home Swim &amp; Dive Meet </p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 10/10: CLOSED<br/>*USC Home WP match*</p>\n<p class=\"wp-block-paragraph\">Sun, 10/11: 11am-2pm</p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sun, 10/4: CLOSED <br/>*USC Home WP match*</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Mon, 10/5: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Tue, 10/6: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Wed, 10/7: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 10/8: 6am-8am<br/>*USC Home Swim &amp; Dive Meet </p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 10/9: CLOSED<br/>*USC Home Swim &amp; Dive Meet </p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 10/10: CLOSED<br/>*USC Home WP match*</p>\n<p class=\"wp-block-paragraph\">Sun, 10/11: CLOSED <br/></p>"
 }
