@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-18T09:05:57.809897-07:00",
+  "checked_at": "2026-10-18T11:52:19.940524-07:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
   "content_hash": "9964f6f9dd04b691",
   "conditional_304": false,
@@ -238,8 +238,8 @@
   "generator": {
     "tool": "scrape.py",
     "version": "1.1.0",
-    "git_sha": "3380f02c1545",
-    "written_at": "2026-10-18T09:05:58.102694-07:00"
+    "git_sha": "12492a64df5f",
+    "written_at": "2026-10-18T11:52:20.118866-07:00"
   },
   "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 10/13/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 10/12: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 10/13: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 10/14: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 10/15: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 10/16: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 10/17: CLOSED<br/>*USC Home WP match*</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 10/18: 11am-2pm</p>\n<p class=\"wp-block-paragraph\"></p>\n<p class=\"wp-block-paragraph\"></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 10/12: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 10/13: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 10/14: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 10/15: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 10/16: *<strong>7am</strong>-8am, 11am-12pm, &amp; 4pm-6pm <em>*Rec Sports hosting ROTC training in the dive pool at 6am</em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 10/17: CLOSED<br/>*USC Home WP match*</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 10/18: CLOSED</p>\n<p class=\"wp-block-paragraph\"></p>\n<p class=\"wp-block-paragraph\"></p>"
 }
