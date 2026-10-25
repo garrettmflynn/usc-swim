@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-25T12:54:42.902900-07:00",
+  "checked_at": "2026-10-25T15:46:52.070710-07:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
-  "content_hash": "a22472d7e236de57",
+  "content_hash": "6de9b58552e217ad",
   "conditional_304": false,
   "parsed": {
     "updated_label": "2026-10-18",
@@ -9,7 +9,7 @@
       "Comp Pool": [
         {
           "weekday": "Mon",
-          "date": "2026-10-19",
+          "date": "2026-10-26",
           "raw": "12pm-2pm",
           "windows": [
             [
@@ -22,7 +22,7 @@
         },
         {
           "weekday": "Tue",
-          "date": "2026-10-20",
+          "date": "2026-10-27",
           "raw": "12pm-2pm",
           "windows": [
             [
@@ -35,7 +35,7 @@
         },
         {
           "weekday": "Wed",
-          "date": "2026-10-21",
+          "date": "2026-10-28",
           "raw": "12pm-2pm",
           "windows": [
             [
@@ -48,7 +48,7 @@
         },
         {
           "weekday": "Thu",
-          "date": "2026-10-22",
+          "date": "2026-10-29",
           "raw": "12pm-2pm",
           "windows": [
             [
@@ -61,7 +61,7 @@
         },
         {
           "weekday": "Fri",
-          "date": "2026-10-23",
+          "date": "2026-10-30",
           "raw": "12pm-2pm",
           "windows": [
             [
@@ -74,7 +74,7 @@
         },
         {
           "weekday": "Sat",
-          "date": "2026-10-24",
+          "date": "2026-10-31",
           "raw": "CLOSED",
           "windows": [],
           "closed": true,
@@ -82,7 +82,7 @@
         },
         {
           "weekday": "Sun",
-          "date": "2026-10-25",
+          "date": "2026-11-01",
           "raw": "11am-2pm",
           "windows": [
             [
@@ -97,7 +97,7 @@
       "Dive Pool": [
         {
           "weekday": "Mon",
-          "date": "2026-10-19",
+          "date": "2026-10-26",
           "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
           "windows": [
             [
@@ -118,7 +118,7 @@
         },
         {
           "weekday": "Tue",
-          "date": "2026-10-20",
+          "date": "2026-10-27",
           "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
           "windows": [
             [
@@ -139,7 +139,28 @@
         },
         {
           "weekday": "Wed",
-          "date": "2026-10-21",
+          "date": "2026-10-28",
+          "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
+          "windows": [
+            [
+              360,
+              480
+            ],
+            [
+              660,
+              720
+            ],
+            [
+              960,
+              1080
+            ]
+          ],
+          "closed": false,
+          "flags": []
+        },
+        {
+          "weekday": "Thu",
+          "date": "2026-10-29",
           "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
           "windows": [
             [
@@ -160,7 +181,7 @@
         },
         {
           "weekday": "Fri",
-          "date": "2026-10-23",
+          "date": "2026-10-30",
           "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
           "windows": [
             [
@@ -181,59 +202,63 @@
         },
         {
           "weekday": "Sat",
-          "date": "2026-10-24",
-          "raw": "CLOSED",
+          "date": "2026-11-01",
+          "raw": "*",
           "windows": [],
-          "closed": true,
-          "flags": []
+          "closed": false,
+          "flags": [
+            "weekday_date_mismatch"
+          ]
         },
         {
           "weekday": "Sun",
-          "date": "2026-10-25",
+          "date": "2026-10-31",
           "raw": "CLOSED",
           "windows": [],
           "closed": true,
-          "flags": []
+          "flags": [
+            "weekday_date_mismatch"
+          ]
         }
       ]
     },
     "unconsumed": [
-      "*USC Home WP match*",
-      "Thu, 10/22:",
-      "*7am-9am",
-      ", 11am-12pm, & 4pm-6pm",
-      "*USC Home WP match*"
+      "USC Swim hosting",
+      "an event",
+      "10am-1pm",
+      "*Modified: USC Home football game & USC Swim hosting",
+      "an event"
     ]
   },
   "coverage": {
     "today": "2026-10-25",
-    "today_covered": true,
-    "posted_through": "2026-10-25",
+    "today_covered": false,
+    "posted_through": "2026-11-01",
     "days_past_end": 0,
-    "swimmable_today": 1
+    "swimmable_today": null
   },
   "parse_health": {
     "status": "degraded",
     "pools": 2,
-    "rows": 13,
-    "windows": 18,
-    "anomaly_rows": 0,
+    "rows": 14,
+    "windows": 21,
+    "anomaly_rows": 2,
     "rows_with_dropped_windows": 0,
     "unattributed_windows": 0,
     "unconsumed": [
-      "*USC Home WP match*",
-      "Thu, 10/22:",
-      "*7am-9am",
-      ", 11am-12pm, & 4pm-6pm",
-      "*USC Home WP match*"
+      "USC Swim hosting",
+      "an event",
+      "10am-1pm",
+      "*Modified: USC Home football game & USC Swim hosting",
+      "an event"
     ],
     "unconsumed_total": 5
   },
   "generator": {
     "tool": "scrape.py",
     "version": "1.1.0",
-    "git_sha": "ee82987df2ed",
-    "written_at": "2026-10-25T12:54:43.047633-07:00"
+    "git_sha": "4aa91131aa97",
+    "written_at": "2026-10-25T15:46:52.274806-07:00"
   },
-  "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 10/18/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 10/19: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 10/20: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 10/21: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 10/22: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 10/23: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 10/24: CLOSED<br/>*USC Home WP match*</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 10/25: 11am-2pm</p>\n<p class=\"wp-block-paragraph\"></p>\n<p class=\"wp-block-paragraph\"></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 10/19: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 10/20: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 10/21: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 10/22: <strong>*7am-9am</strong>, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 10/23: 6am-8am, 11am-12pm, &amp; 4pm-6pm </p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 10/24: CLOSED<br/>*USC Home WP match*</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 10/25: CLOSED</p>\n<p class=\"wp-block-paragraph\"></p>\n<p class=\"wp-block-paragraph\"></p>"
+  "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 10/18/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 10/26: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 10/27: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 10/28: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 10/29: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 10/30: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 10/31: CLOSED<br/><em>*<em>USC Swim hosting</em> <em>an event</em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/1: 11am-2pm</p>\n<p class=\"wp-block-paragraph\"></p>\n<p class=\"wp-block-paragraph\"></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 10/26: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 10/27: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 10/28: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 10/29: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 10/30: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 11/1: *<strong>10am-1pm</strong><br/><em>*Modified: USC Home football game &amp; USC Swim hosting</em> <em>an event</em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 10/31: CLOSED</p>\n<p class=\"wp-block-paragraph\"></p>\n<p class=\"wp-block-paragraph\"></p>"
 }

@@ -6334,5 +6334,261 @@
       "unconsumed_total": 5
     },
     "origin": "live"
+  },
+  {
+    "checked_at": "2026-10-25T15:46:52.070710-07:00",
+    "content_hash": "6de9b58552e217ad",
+    "parsed": {
+      "updated_label": "2026-10-18",
+      "pools": {
+        "Comp Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-10-26",
+            "raw": "12pm-2pm",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-10-27",
+            "raw": "12pm-2pm",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-10-28",
+            "raw": "12pm-2pm",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-10-29",
+            "raw": "12pm-2pm",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-10-30",
+            "raw": "12pm-2pm",
+            "windows": [
+              [
+                720,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-10-31",
+            "raw": "CLOSED",
+            "windows": [],
+            "closed": true,
+            "flags": []
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-11-01",
+            "raw": "11am-2pm",
+            "windows": [
+              [
+                660,
+                840
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          }
+        ],
+        "Dive Pool": [
+          {
+            "weekday": "Mon",
+            "date": "2026-10-26",
+            "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Tue",
+            "date": "2026-10-27",
+            "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Wed",
+            "date": "2026-10-28",
+            "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Thu",
+            "date": "2026-10-29",
+            "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Fri",
+            "date": "2026-10-30",
+            "raw": "6am-8am, 11am-12pm, & 4pm-6pm",
+            "windows": [
+              [
+                360,
+                480
+              ],
+              [
+                660,
+                720
+              ],
+              [
+                960,
+                1080
+              ]
+            ],
+            "closed": false,
+            "flags": []
+          },
+          {
+            "weekday": "Sat",
+            "date": "2026-11-01",
+            "raw": "*",
+            "windows": [],
+            "closed": false,
+            "flags": [
+              "weekday_date_mismatch"
+            ]
+          },
+          {
+            "weekday": "Sun",
+            "date": "2026-10-31",
+            "raw": "CLOSED",
+            "windows": [],
+            "closed": true,
+            "flags": [
+              "weekday_date_mismatch"
+            ]
+          }
+        ]
+      },
+      "unconsumed": [
+        "USC Swim hosting",
+        "an event",
+        "10am-1pm",
+        "*Modified: USC Home football game & USC Swim hosting",
+        "an event"
+      ]
+    },
+    "coverage": {
+      "today": "2026-10-25",
+      "today_covered": false,
+      "posted_through": "2026-11-01",
+      "days_past_end": 0,
+      "swimmable_today": null
+    },
+    "parse_health": {
+      "status": "degraded",
+      "pools": 2,
+      "rows": 14,
+      "windows": 21,
+      "anomaly_rows": 2,
+      "rows_with_dropped_windows": 0,
+      "unattributed_windows": 0,
+      "unconsumed": [
+        "USC Swim hosting",
+        "an event",
+        "10am-1pm",
+        "*Modified: USC Home football game & USC Swim hosting",
+        "an event"
+      ],
+      "unconsumed_total": 5
+    },
+    "origin": "live"
   }
 ]
