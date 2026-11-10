@@ -1,27 +1,12 @@
 {
-  "checked_at": "2026-11-09T09:46:09.009274-08:00",
+  "checked_at": "2026-11-09T17:44:29.690142-08:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
-  "content_hash": "6f46bdba41c97fb1",
+  "content_hash": "fb6ff6dbdceec881",
   "conditional_304": false,
   "parsed": {
-    "updated_label": "2026-10-18",
+    "updated_label": null,
     "pools": {
       "Comp Pool": [
-        {
-          "weekday": "Sun",
-          "date": "2026-11-08",
-          "raw": "11am-2pm",
-          "windows": [
-            [
-              660,
-              840
-            ]
-          ],
-          "closed": false,
-          "flags": [
-            "outside_posted_week"
-          ]
-        },
         {
           "weekday": "Mon",
           "date": "2026-11-09",
@@ -115,16 +100,6 @@
         }
       ],
       "Dive Pool": [
-        {
-          "weekday": "Sun",
-          "date": "2026-11-08",
-          "raw": "CLOSED",
-          "windows": [],
-          "closed": true,
-          "flags": [
-            "outside_posted_week"
-          ]
-        },
         {
           "weekday": "Mon",
           "date": "2026-11-09",
@@ -241,6 +216,7 @@
       ]
     },
     "unconsumed": [
+      "8/26",
       "*USC hosting",
       "Dive Meet",
       "*USC hosting",
@@ -263,12 +239,13 @@
   "parse_health": {
     "status": "degraded",
     "pools": 2,
-    "rows": 16,
-    "windows": 21,
-    "anomaly_rows": 2,
+    "rows": 14,
+    "windows": 20,
+    "anomaly_rows": 0,
     "rows_with_dropped_windows": 0,
     "unattributed_windows": 0,
     "unconsumed": [
+      "8/26",
       "*USC hosting",
       "Dive Meet",
       "*USC hosting",
@@ -280,13 +257,13 @@
       "Dive Meet",
       "*USC hosting a Dive Meet"
     ],
-    "unconsumed_total": 10
+    "unconsumed_total": 11
   },
   "generator": {
     "tool": "scrape.py",
     "version": "1.1.0",
-    "git_sha": "1cac9fc1683d",
-    "written_at": "2026-11-09T09:46:09.166237-08:00"
+    "git_sha": "cd3cda8a3cc0",
+    "written_at": "2026-11-09T17:44:29.779699-08:00"
   },
-  "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 10/18/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/8: 11am-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 11/9: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 11/10: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 11/11: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 11/12: 12pm-2pm <em><em>*USC hosting </em></em>a <em><em>Dive Meet</em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 11/13: 12pm-2pm <em><em>*USC hosting </em></em>a <em><em>Dive Meet</em></em></p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 11/14: 12pm-2pm<br/><em><em>*USC hosting Swim &amp; Dive Meet</em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/15: 11am-2pm</p>\n<p class=\"wp-block-paragraph\"></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/8: CLOSED</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 11/9: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 11/10: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 11/11: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 11/12: 6am-8am &amp; 4pm-6pm <br/><em><em>*USC hosting </em></em>a <em><em>Dive Meet</em></em></p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 11/13: 6am-8am &amp; 4pm-6pm <br/><em>*<em><em>USC hosting </em></em>a <em><em>Dive Meet</em></em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 11/14: CLOSED<br/><em>*USC hosting a Dive Meet</em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/15: CLOSED</p>\n<p class=\"wp-block-paragraph\"></p>"
+  "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\">*<strong><em>Updated 11</em></strong>/<strong><em>8/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 11/9: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 11/10: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 11/11: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 11/12: 12pm-2pm <em><em>*USC hosting </em></em>a <em><em>Dive Meet</em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 11/13: 12pm-2pm <em><em>*USC hosting </em></em>a <em><em>Dive Meet</em></em></p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 11/14: 12pm-2pm<br/><em><em>*USC hosting Swim &amp; Dive Meet</em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/15: 11am-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\"></p>\n<p class=\"wp-block-paragraph\"></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 11/9: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 11/10: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 11/11: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, 11/12: 6am-8am &amp; 4pm-6pm <br/><em><em>*USC hosting </em></em>a <em><em>Dive Meet</em></em></p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 11/13: 6am-8am &amp; 4pm-6pm <br/><em>*<em><em>USC hosting </em></em>a <em><em>Dive Meet</em></em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 11/14: CLOSED<br/><em>*USC hosting a Dive Meet</em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/15: CLOSED</p>\n<p class=\"has-small-font-size wp-block-paragraph\"></p>\n<p class=\"wp-block-paragraph\"></p>"
 }
