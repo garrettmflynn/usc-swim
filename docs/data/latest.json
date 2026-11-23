@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T11:56:13.889389-08:00",
+  "checked_at": "2026-11-22T17:05:55.982801-08:00",
   "source": "https://recsports.usc.edu/rec-facilities/operating-hours/",
   "content_hash": "41104fbf45e8e901",
   "conditional_304": false,
@@ -275,8 +275,8 @@
   "generator": {
     "tool": "scrape.py",
     "version": "1.1.0",
-    "git_sha": "810df6b121e8",
-    "written_at": "2026-11-22T11:56:14.183350-08:00"
+    "git_sha": "5038e6447c6c",
+    "written_at": "2026-11-22T17:05:56.066858-08:00"
   },
   "raw_block": "<h3 class=\"wp-block-heading has-text-align-left\">Rec Swim Hours</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Rec swim hours are subject to change; check the website regularly before coming in*.</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Lanes are available on a first-come, first-served basis during the following times for recreational lap swimming only.</p>\n<p class=\"wp-block-paragraph\"><strong>*<em>Updated 11</em>/<em>14/26</em></strong></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Comp Pool</h3>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 11/14: 12pm-2pm<br/><em><em>*USC hosting a Dive Meet</em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/15: 11am-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 11/16: 12pm-2pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 11/17: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 11/18: 12pm-2pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Thu, 11/19: CLOSED <em><em>*USC </em>MPSF Water Polo tournament</em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Fri, 11/20: CLOSED <em><em>*USC </em>MPSF Water Polo tournament</em></p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Sat, 11/21: CLOSED<br/><em><em><em><em>*USC </em>MPSF Water Polo tournament</em></em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/22: CLOSED<br/><em><em>*USC </em>MPSF Water Polo tournament</em></p>\n<h3 class=\"wp-block-heading has-text-align-left\">Dive Pool</h3>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 11/14: CLOSED<br/><em>*USC hosting a Dive Meet</em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/15: CLOSED</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Mon, 11/16: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Tue, 11/17: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Wed, 11/18: 6am-8am, 11am-12pm, &amp; 4pm-6pm</p>\n<p class=\"has-small-font-size wp-block-paragraph\">Thu, CLOSED<br/><em><em>*USC </em>MPSF Water Polo tournament</em></p>\n<p class=\"has-text-align-left has-small-font-size wp-block-paragraph\">Fri, 11/20: CLOSED<br/><em><em><em>*USC </em>MPSF Water Polo tournament</em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sat, 11/21: CLOSED<br/><em><em><em>*USC </em>MPSF Water Polo tournament</em></em></p>\n<p class=\"has-small-font-size wp-block-paragraph\">Sun, 11/22: CLOSED<br/><em><em>*USC </em>MPSF Water Polo tournament</em></p>"
 }
